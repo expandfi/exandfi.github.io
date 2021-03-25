@@ -9,6 +9,7 @@ import WithLayout from 'WithLayout';
 import { Main as MainLayout, Minimal as MinimalLayout, DocsLayout } from './layouts';
 
 import {
+  ExpandfiHome as Expandfi,
   Home as HomeView,
   IndexView,
   Agency as AgencyView,
@@ -61,6 +62,18 @@ import {
 const Routes = () => {
   return (
     <Switch>
+      <Route
+        exact 
+        path="/expandfi"
+        render={matchprops => (
+          <WithLayout
+          {...matchprops}
+          component={Expandfi}
+          layout={MainLayout}
+          />
+        )}
+      />
+
       <Route
         exact
         path="/"
