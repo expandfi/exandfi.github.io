@@ -1,0 +1,10 @@
+export { default as Hero } from './Hero';
+export { default as AboutTop } from './AboutTop';
+export { default as Features } from './Features';
+export { default as Faq } from './Faq';
+export { default as Integrations } from './Integrations';
+export { default as Categories } from './Categories';
+export { default as Advantages } from './Advantages';
+export { default as Solutions } from './Solutions';
+export { default as Subscription } from './Subscription';
+export { default as Reviews } from './Reviews';

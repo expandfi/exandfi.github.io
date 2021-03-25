@@ -1,3 +1,5 @@
+export { default as ExpandfiHome } from './ExpandfiHome';
+
 export { default as Home } from './Home';
 export { default as IndexView } from './IndexView';
 export { default as Agency } from './Agency';
