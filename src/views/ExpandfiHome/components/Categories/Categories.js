@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import { Grid } from '@material-ui/core';
-import { Image } from 'components/atoms';
+import { Icon } from 'components/atoms';
 import { SectionHeader } from 'components/molecules';
 import { DescriptionListIcon, CardBase } from 'components/organisms';
 
@@ -31,22 +31,21 @@ const Categories = props => {
 
   return (
     <div className={className} {...rest}>
-      <SectionHeader title="Categories" align="left" />
-      <Grid container spacing={2}>
+      <SectionHeader title="How does it work?" align="center" />
+      <Grid container spacing={6}>
         {data.map((item, index) => (
-          <Grid item xs={6} md={2} key={index} data-aos="fade-up">
+          <Grid item xs={6} md={3} key={index} data-aos="fade-up">
             <CardBase noBorder noShadow liftUp className={classes.cardBase}>
-              <DescriptionListIcon
-                className={classes.descriptionListIcon}
-                icon={
-                  <Image
-                    {...item.icon}
-                    alt={item.title}
-                    className={classes.image}
-                  />
-                }
-                title={item.title}
-              />
+            <DescriptionListIcon
+              title={item.title}
+              subtitle={item.subtitle}
+              icon={
+                <Icon
+                  fontIconClass={item.icon}
+                  size="medium"
+                />
+              }
+            />
             </CardBase>
           </Grid>
         ))}

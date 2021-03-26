@@ -42,42 +42,32 @@ export const advantages = [
 
 export const categories = [
   {
-    title: 'Headphones',
+    title: 'Lorem ipsum dolor sit amet',
+    subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',
     icon: {
       src: 'https://assets.maccarianagency.com/the-front/illustrations/icon-headphone.png',
       srcSet: 'https://assets.maccarianagency.com/the-front/illustrations/icon-headphone@2x.png 2x',
     },
   },
   {
-    title: 'Beats',
+    title: 'Lorem ipsum dolor sit amet',
+    subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',
     icon: {
       src: 'https://assets.maccarianagency.com/the-front/illustrations/icon-music.png',
       srcSet: 'https://assets.maccarianagency.com/the-front/illustrations/icon-music@2x.png 2x',
     },
   },
   {
-    title: 'Notebooks',
+    title: 'Lorem ipsum dolor sit amet',
+    subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',
     icon: {
       src: 'https://assets.maccarianagency.com/the-front/illustrations/icon-laptop.png',
       srcSet: 'https://assets.maccarianagency.com/the-front/illustrations/icon-laptop@2x.png 2x',
     },
   },
   {
-    title: 'Cameras',
-    icon: {
-      src: 'https://assets.maccarianagency.com/the-front/illustrations/icon-camera.png',
-      srcSet: 'https://assets.maccarianagency.com/the-front/illustrations/icon-camera@2x.png 2x',
-    },
-  },
-  {
-    title: 'Gaming',
-    icon: {
-      src: 'https://assets.maccarianagency.com/the-front/illustrations/icon-game.png',
-      srcSet: 'https://assets.maccarianagency.com/the-front/illustrations/icon-game@2x.png 2x',
-    },
-  },
-  {
-    title: 'Video',
+    title: 'Lorem ipsum dolor sit amet',
+    subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',
     icon: {
       src: 'https://assets.maccarianagency.com/the-front/illustrations/icon-camera.png',
       srcSet: 'https://assets.maccarianagency.com/the-front/illustrations/icon-camera@2x.png 2x',
@@ -145,32 +135,10 @@ export const features = [
 
 export const solutions = [
   {
-    label: '100% WHITE LABEL',
-    title: 'Your Brand Platform',
+    title: 'Advocating for the success of business owners',
     description:
-      'Monetize your website and manage all guest interactions with your own brand, logo and domains.',
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     illustration: 'https://assets.maccarianagency.com/the-front/illustrations/brand-platform.svg',
-  },
-  {
-    label: 'FULLY RESPONSIVE',
-    title: 'Mobile Compatible Platform',
-    description:
-      'Introduce your brand-new mobile friendly website to your customers. Seamlessly integrates with WiFi hardware and marketing automation software.',
-    illustration: 'https://assets.maccarianagency.com/the-front/illustrations/mobiles.svg',
-  },
-  {
-    label: 'CLIENT PORTAL ACCESS',
-    title: 'Simple Customer Dashboards',
-    description:
-      'Give sub-users access to a simplified dashboard with limited permission levels to offer remote management and real-time analytics.',
-    illustration: 'https://assets.maccarianagency.com/the-front/illustrations/dashboard.svg',
-  },
-  {
-    label: 'GO SOCIAL',
-    title: 'Integrate With Social Media Platforms',
-    description:
-      'Build, customize any website your customers want and integrate in your socila media platforms.',
-    illustration: 'https://assets.maccarianagency.com/the-front/illustrations/social-website.svg',
   },
 ];
 
@@ -209,5 +177,15 @@ export const reviews = [
     authorOccupation: 'Lead Generation, Alternative Capital',
     feedback:
       'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+  },
+  {
+    authorPhoto: {
+      src: 'https://assets.maccarianagency.com/the-front/photos/people/veronica-adams.jpg',
+      srcSet: 'https://assets.maccarianagency.com/the-front/photos/people/veronica-adams@2x.jpg 2x',
+    },
+    authorName: 'Veronica Adams',
+    authorOccupation: 'Growth Marketer, Crealytics',
+    feedback:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
   },
 ];

@@ -50,23 +50,12 @@ const Reviews = props => {
   return (
     <div className={className} {...rest}>
       <SectionHeader
-        title={
-          <span className={classes.textWhite}>
-            Trusted by the world’s most innovative businesses – big and small
-          </span>
-        }
-        subtitle={
-          <span className={classes.textWhite}>
-            After 3 days all of your offers will arrive and you will have
-            another 7 days to select your new company.
-          </span>
-        }
-        subtitleColor="textPrimary"
+        title={"What our clients say"}
         data-aos="fade-up"
       />
       <Grid container spacing={4}>
         {data.map((item, index) => (
-          <Grid item xs={12} md={6} key={index} className={classes.gridItem}>
+          <Grid item xs={12} md={4} key={index} className={classes.gridItem}>
             <Grid
               container
               className={classes.gridCard}

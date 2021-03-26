@@ -28,16 +28,7 @@ const Solutions = props => {
 
   return (
     <div className={className} {...rest}>
-      <SectionHeader
-        title={
-          <span>
-            Your New Website Marketing{' '}
-            <Typography component="span" variant="inherit" color="primary">Solution Is Here</Typography>
-          </span>
-        }
-        subtitle="TheFront Kit offers a completely customizable website landing pages and supported pages management platform. Here’s what makes us different:"
-        fadeUp
-      />
+
       <Grid container justify="center">
         {data.map((item, index) => (
           <Grid
@@ -53,7 +44,6 @@ const Solutions = props => {
           >
             <Grid item xs={12} sm={6}>
               <SectionHeader
-                label={item.label}
                 titleVariant="h5"
                 title={item.title}
                 subtitle={item.description}
@@ -70,15 +60,6 @@ const Solutions = props => {
             </Grid>
           </Grid>
         ))}
-        <Grid item container justify="center" xs={12}>
-          <Button
-            variant="contained"
-            color="primary"
-            size={isMd ? 'large' : 'medium'}
-          >
-            See all features
-          </Button>
-        </Grid>
       </Grid>
     </div>
   );
