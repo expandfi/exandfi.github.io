@@ -1,10 +1,9 @@
 import React from 'react';
 import { makeStyles, Divider } from '@material-ui/core';
 import { Section, SectionAlternate } from 'components/organisms';
-import { Hero, AboutTop, Features, Integrations, Categories, Advantages, Solutions, Reviews, Faq, Subscription } from './components';
+import { Hero, AboutTop, Features, Integrations, Categories, Solutions, Reviews, Faq, Subscription } from './components';
 import {
     about,
-    advantages,
     categories,
     faq,
     features,
@@ -53,24 +52,20 @@ const ExpandfiHome = ({ themeMode }) => {
         </Section>
 
         <SectionAlternate>
-            <Advantages data={advantages} />
-        </SectionAlternate>
-
-        <SectionAlternate>
             <Solutions data={solutions} />
         </SectionAlternate>
 
         <SectionAlternate className={classes.reviewSection}>
-        <Reviews data={reviews} />
-      </SectionAlternate>
+            <Reviews data={reviews} />
+        </SectionAlternate>
 
-      <Section className={classes.sectionNoPaddingTop}>
+        <Section className={classes.sectionNoPaddingTop}>
           <Faq data={faq} />
         </Section>
 
         <SectionAlternate innerNarrowed className={classes.sectionAlternate}>
-        <Subscription />
-      </SectionAlternate>
+            <Subscription />
+        </SectionAlternate>
 
     </div>
   );
