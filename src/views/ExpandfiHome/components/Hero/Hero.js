@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
-import { Typography, Button } from '@material-ui/core';
+import { Grid, TextField,Typography, Button } from '@material-ui/core';
 import { Image } from 'components/atoms';
-import { SectionHeader } from 'components/molecules';
+import { SectionHeader, TypedText } from 'components/molecules';
 import { Section } from 'components/organisms';
 
 const useStyles = makeStyles(theme => ({
@@ -59,33 +59,82 @@ const Hero = props => {
   const { className, ...rest } = props;
   const classes = useStyles();
 
+  const title = (
+    <Typography variant="h2" component="span" className={classes.fontWeight900}>
+      Expand your
+      <br />
+      <TypedText
+        component="span"
+        variant="h2"
+        color="secondary"
+        className={classes.fontWeight900}
+        typedProps={{
+          strings: [
+            'reach',
+            'channels',
+            'relevance',
+            'data',
+            'sales',
+            'profits',
+            'value',
+          ],
+          typeSpeed: 50,
+          loop: true,
+        }}
+      />
+    </Typography>
+  );
+
   return (
     <div className={clsx(classes.root, className)} {...rest}>
       <div className={classes.hero}>
         <Section className={classes.section}>
           <div className={classes.sectionHeader}>
             <Typography variant="h6" gutterBottom className={classes.textWhite}>
-              Download Free for Mac, Windows and Linux OS
+              Own your customer
             </Typography>
             <SectionHeader
               titleVariant="h3"
-              title={
-                <span className={classes.textWhite}>
-                  Designed secure.
-                  <br />
-                  Built for anything.
-                </span>
-              }
+              title={title}
               subtitle={
                 <span className={classes.textWhite}>
-                  Forward thinking businesses use our cloud backup service to
-                  ensure data reliability and safety.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                    incididunt ut labore et dolore magna aliqua.
                 </span>
               }
               ctaGroup={[
-                <Button variant="contained" size="large">
-                  Explore
-                </Button>,
+                <div>
+                  <Typography
+                    variant="subtitle1"
+                    color="textPrimary"
+                    className={classes.inputTitle}
+                  >
+                    Get started today
+                  </Typography>
+                  <TextField
+                    placeholder="Enter your email"
+                    variant="outlined"
+                    size="medium"
+                    name="email"
+                    fullWidth
+                    type="email"
+                  />
+                  <Button
+                  variant="contained"
+                  type="submit"
+                  color="primary"
+                  size="large"
+                >
+                  JOIN OUR WAITLIST
+                  </Button>
+                  <Typography
+                    variant="subtitle1"
+                    color="textPrimary"
+                    className={classes.inputTitle}
+                  >
+                    Lorem ipsum dolor sit amet, consectetur adioiscing elit, sed do.
+                  </Typography>
+               </div>
               ]}
               align="left"
               data-aos="fade-up"

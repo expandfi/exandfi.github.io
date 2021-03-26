@@ -3,6 +3,7 @@ import { makeStyles, Divider } from '@material-ui/core';
 import { Section, SectionAlternate } from 'components/organisms';
 import { Hero, AboutTop, Features, Integrations, Categories, Advantages, Solutions, Reviews, Faq, Subscription } from './components';
 import {
+    about,
     advantages,
     categories,
     faq,
@@ -30,8 +31,9 @@ const ExpandfiHome = ({ themeMode }) => {
   return (
     <div>
         <Hero />
+
         <SectionAlternate>
-            <AboutTop />
+            <AboutTop title={about[0].title} body={about[0].body} img={about[0].img} alt={about[0].alt}/>
          </SectionAlternate>
 
          <Section>
@@ -39,7 +41,7 @@ const ExpandfiHome = ({ themeMode }) => {
          </Section>
             
         <SectionAlternate>
-            <AboutTop />
+            <AboutTop title={about[1].title} body={about[1].body} img={about[1].img} alt={about[1].alt}/>
         </SectionAlternate>
 
         <SectionAlternate className={classes.integrationsSection}>

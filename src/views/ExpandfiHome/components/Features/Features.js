@@ -42,8 +42,8 @@ const Features = props => {
       <Grid container spacing={4} direction={isMd ? 'row' : 'column-reverse'}>
         <Grid item xs={12} md={6}>
           <SectionHeader
-            title="Learn with TheFront"
-            subtitle="Send one-off and automated email, push, and in-app messages to people. Create better stories."
+            title="Understand your customers"
+            subtitle="ExpandFi provides you with a detailed analysis of your customers including"
             align="left"
             disableGutter
             data-aos="fade-up"

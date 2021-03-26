@@ -1,5 +1,16 @@
 import { colors } from '@material-ui/core';
 
+export const about = [
+  {
+    title: "Secure your Amazon customers",
+    body: "Loading your customers into ExpandFi secures them from Amazon. Plus with the largest database of Amazon customers, we can match name and address even without Amazon providing it."
+  },
+  {
+    title: "Enrich your customer data",
+    body: "ExpandFi makes it easy to enirch your customer data with Email Appends, Phone Appends, and Demographic Data. Plus with the highest match rate in the industry, you're getting the best data out there."
+  }
+]
+
 
 export const advantages = [
   {
@@ -126,10 +137,10 @@ export const faq = [
 ];
 
 export const features = [
-  'Lifetime Updates & Introduction and Working',
-  'Tech support & Mutual Funds',
-  'Tons of assets & Lifetime Updates',
-  'Integration ready & Tech support',
+  'Lifetime Value (LTV)',
+  'Repurchase Rate',
+  'Time between orders',
+  'Cross-Channel Sales & more',
 ];
 
 export const solutions = [
@@ -166,21 +177,15 @@ export const solutions = [
 export const integrations = [
   {
     logo: 'https://assets.maccarianagency.com/the-front/logos/slack.svg',
-    name: 'Slack',
-    title:
-      "Sync your team's work and activity to share automatically in a channel with a simple plugin.",
+    alt: 'Slack',
   },
   {
     logo: 'https://assets.maccarianagency.com/the-front/logos/mailchimp.svg',
-    name: 'Mailchimp',
-    title:
-      'Communicate important messages to your users through TheFront using Mailchimp as the delivery service.',
+    alt: 'Mailchimp',
   },
   {
     logo: 'https://assets.maccarianagency.com/the-front/logos/dropbox.svg',
-    name: 'Dropbox',
-    title:
-      'Sync any file store to Dropbox for automated sharing with people outside the company.',
+    alt: 'Dropbox',
   },
 ];
 
