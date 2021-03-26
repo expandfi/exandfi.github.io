@@ -33,8 +33,8 @@ const AboutTop = props => {
           data-aos={'fade-up'}
         >
           <Image
-            src="https://assets.maccarianagency.com/the-front/illustrations/easy-corner.svg"
-            alt="Find a Job"
+            src={props.img}
+            alt={props.alt}
             className={classes.image}
           />
         </Grid>
@@ -48,7 +48,7 @@ const AboutTop = props => {
         >
           <div>
             <SectionHeader
-              title="Easily find leads and customers"
+              title={props.title}
               subtitle="Send one-off and automated email, push, and in-app messages to people. Create better stories."
               align="left"
             />

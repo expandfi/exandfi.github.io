@@ -35,17 +35,8 @@ const Integrations = props => {
   return (
     <div className={className} {...rest}>
       <SectionHeader
-        title={
-          <span className={classes.textWhite}>
-            Syncronization with different companiees
-          </span>
-        }
-        subtitle={
-          <span className={classes.textWhite}>
-            Forward thinking businesses use our cloud backup service to ensure
-            data reliability and safety.
-          </span>
-        }
+        title={"Expand your reach"}
+        subtitle={"Easily create Facebook custom audiences, import reviews into Shopify, export emails into Klaviyo. and more."}
         data-aos="fade-up"
       />
       <Grid container spacing={isMd ? 4 : 2}>
@@ -64,11 +55,10 @@ const Integrations = props => {
             <DescriptionListIcon
               icon={
                 <Avatar className={classes.avatar}>
-                  <Image src={item.logo} alt={item.name} />
+                  <Image src={item.logo} alt={item.alt} />
                 </Avatar>
               }
               title={item.name}
-              subtitle={item.title}
               className={classes.descriptionListIcon}
             />
           </Grid>
