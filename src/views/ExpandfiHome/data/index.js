@@ -3,11 +3,13 @@ import { colors } from '@material-ui/core';
 export const about = [
   {
     title: "Secure your Amazon customers",
-    body: "Loading your customers into ExpandFi secures them from Amazon. Plus with the largest database of Amazon customers, we can match name and address even without Amazon providing it."
+    body: "Loading your customers into ExpandFi secures them from Amazon. Plus with the largest database of Amazon customers, we can match name and address even without Amazon providing it.",
+    img: "./assets/aboutTop1.png"
   },
   {
     title: "Enrich your customer data",
-    body: "ExpandFi makes it easy to enirch your customer data with Email Appends, Phone Appends, and Demographic Data. Plus with the highest match rate in the industry, you're getting the best data out there."
+    body: "ExpandFi makes it easy to enirch your customer data with Email Appends, Phone Appends, and Demographic Data. Plus with the highest match rate in the industry, you're getting the best data out there.",
+    img: "./assets/aboutTop2.png"
   }
 ]
 
@@ -45,32 +47,28 @@ export const categories = [
     title: 'Lorem ipsum dolor sit amet',
     subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',
     icon: {
-      src: 'https://assets.maccarianagency.com/the-front/illustrations/icon-headphone.png',
-      srcSet: 'https://assets.maccarianagency.com/the-front/illustrations/icon-headphone@2x.png 2x',
+      src: './assets/icon1.png'
     },
   },
   {
     title: 'Lorem ipsum dolor sit amet',
     subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',
     icon: {
-      src: 'https://assets.maccarianagency.com/the-front/illustrations/icon-music.png',
-      srcSet: 'https://assets.maccarianagency.com/the-front/illustrations/icon-music@2x.png 2x',
+      src: './assets/icon2.png'
     },
   },
   {
     title: 'Lorem ipsum dolor sit amet',
     subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',
     icon: {
-      src: 'https://assets.maccarianagency.com/the-front/illustrations/icon-laptop.png',
-      srcSet: 'https://assets.maccarianagency.com/the-front/illustrations/icon-laptop@2x.png 2x',
+      src: './assets/icon3.png'
     },
   },
   {
     title: 'Lorem ipsum dolor sit amet',
     subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',
     icon: {
-      src: 'https://assets.maccarianagency.com/the-front/illustrations/icon-camera.png',
-      srcSet: 'https://assets.maccarianagency.com/the-front/illustrations/icon-camera@2x.png 2x',
+      src: './assets/icon4.png'
     },
   },
 ];
@@ -138,53 +136,58 @@ export const solutions = [
     title: 'Advocating for the success of business owners',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    illustration: 'https://assets.maccarianagency.com/the-front/illustrations/brand-platform.svg',
+    illustration: './assets/pexels-fauxels-3184465 1.png',
   },
 ];
 
 export const integrations = [
   {
-    logo: 'https://assets.maccarianagency.com/the-front/logos/slack.svg',
-    alt: 'Slack',
+    logo: './assets/amazon.png',
+    alt: 'Amazon',
   },
   {
-    logo: 'https://assets.maccarianagency.com/the-front/logos/mailchimp.svg',
-    alt: 'Mailchimp',
+    logo: './assets/facebook.png',
+    alt: 'Facebook',
   },
   {
-    logo: 'https://assets.maccarianagency.com/the-front/logos/dropbox.svg',
-    alt: 'Dropbox',
+    logo: './assets/shopify.png',
+    alt: 'Shopify',
+  },
+  {
+    logo: './assets/klaviyo.png',
+    alt: 'Klaviyo',
+  },
+  {
+    logo: './assets/judge.png',
+    alt: 'judge',
   },
 ];
 
 export const reviews = [
   {
     authorPhoto: {
-      src: 'https://assets.maccarianagency.com/the-front/photos/people/veronica-adams.jpg',
-      srcSet: 'https://assets.maccarianagency.com/the-front/photos/people/veronica-adams@2x.jpg 2x',
+      src: './assets/JohnDoe.png'
     },
-    authorName: 'Veronica Adams',
-    authorOccupation: 'Growth Marketer, Crealytics',
+    authorName: 'John Doe',
+    authorOccupation: 'CEO, PrettyDopeDesigns',
     feedback:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
   },
   {
     authorPhoto: {
-      src: 'https://assets.maccarianagency.com/the-front/photos/people/akachi-luccini.jpg',
-      srcSet: 'https://assets.maccarianagency.com/the-front/photos/people/akachi-luccini@2x.jpg 2x',
+      src: './assets/JaneGoodman.png'
     },
-    authorName: 'Akachi Luccini',
-    authorOccupation: 'Lead Generation, Alternative Capital',
+    authorName: 'Jane Goodman',
+    authorOccupation: 'Founder, ImpactNation',
     feedback:
       'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
   },
   {
     authorPhoto: {
-      src: 'https://assets.maccarianagency.com/the-front/photos/people/veronica-adams.jpg',
-      srcSet: 'https://assets.maccarianagency.com/the-front/photos/people/veronica-adams@2x.jpg 2x',
+      src: './assets/TomJackson.png'
     },
-    authorName: 'Veronica Adams',
-    authorOccupation: 'Growth Marketer, Crealytics',
+    authorName: 'Tom Jackson',
+    authorOccupation: 'Founder, CoolBusiness',
     feedback:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
   },

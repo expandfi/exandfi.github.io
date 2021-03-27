@@ -39,7 +39,7 @@ const Integrations = props => {
         subtitle={"Easily create Facebook custom audiences, import reviews into Shopify, export emails into Klaviyo. and more."}
         data-aos="fade-up"
       />
-      <Grid container spacing={isMd ? 4 : 2}>
+      <Grid container spacing={isMd ? 4 : 1}>
         {data.map((item, index) => (
           <Grid
             key={index}
@@ -47,18 +47,15 @@ const Integrations = props => {
             container
             alignItems="center"
             direction="column"
-            xs={12}
+            xs={6}
             sm={4}
             md={4}
             data-aos={'fade-up'}
           >
             <DescriptionListIcon
               icon={
-                <Avatar className={classes.avatar}>
                   <Image src={item.logo} alt={item.alt} />
-                </Avatar>
               }
-              title={item.name}
               className={classes.descriptionListIcon}
             />
           </Grid>
