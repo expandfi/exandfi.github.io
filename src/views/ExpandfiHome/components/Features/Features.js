@@ -74,8 +74,8 @@ const Features = props => {
           data-aos="fade-up"
         >
           <Image
-            src="https://assets.maccarianagency.com/the-front/illustrations/learning.svg"
-            alt="..."
+            src="./assets/features.png"
+            alt="features"
             className={classes.coverImage}
           />
         </Grid>

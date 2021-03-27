@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import { Grid } from '@material-ui/core';
-import { Icon } from 'components/atoms';
+import { Image } from 'components/atoms';
 import { SectionHeader } from 'components/molecules';
 import { DescriptionListIcon, CardBase } from 'components/organisms';
 
@@ -40,10 +40,7 @@ const Categories = props => {
               title={item.title}
               subtitle={item.subtitle}
               icon={
-                <Icon
-                  fontIconClass={item.icon}
-                  size="medium"
-                />
+              <Image src={item.icon.src}/>
               }
             />
             </CardBase>
