@@ -2,7 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const path = require ("path");
 const mongoose = require("mongoose");
-const routes = require("./routes");
+//const routes = require("./routes");
 const app = express();
 const PORT = process.env.PORT || 2002;
 const db = mongoose.connection;
@@ -16,7 +16,7 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("public/assets"));
 }
 // Add routes, both API and view
-app.use(routes);
+app.get('/', (req, res) => res.send('Hello world!'));
 
 // Connect to the Mongo DB
 mongoose.connect(
