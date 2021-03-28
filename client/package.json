@@ -8,7 +8,8 @@
     "start": "react-scripts start",
     "build": "cross-env GENERATE_SOURCEMAP=false react-scripts build",
     "prettier": "prettier --write '**/*.{js,css,html}'",
-    "clear-all": "rimraf ./build ./node_modules"
+    "clear-all": "rimraf ./build ./node_modules",
+    "seed": "node scripts/seedBD.js"
   },
   "eslintConfig": {
     "extends": [
