@@ -18,13 +18,25 @@ const useStyles = makeStyles(theme => ({
     minWidth: 'auto',
     marginRight: theme.spacing(2),
   },
+  listItemText: {
+    fontSize: '1.2rem',
+  
+  },
   coverImage: {
     [theme.breakpoints.down('sm')]: {
       maxWidth: 500,
     },
   },
   icon: {
-    borderRadius: theme.spacing(0, 1),
+    borderRadius: '50%',
+  },
+  featuresTitle: {
+    fontFamily: 'Lato',
+    fontWeight: '900',
+    fontSize: '48px',
+    lineHeight: '54px',
+    color: '#121037',
+    marginBottom: '10px',
   },
 }));
 
@@ -55,11 +67,11 @@ const Features = props => {
                   <IconAlternate
                     size="extraSmall"
                     fontIconClass="fas fa-check"
-                    color={colors.indigo}
+                    color={colors.yellow}
                     className={classes.icon}
                   />
                 </ListItemAvatar>
-                <ListItemText primary={item} />
+                <ListItemText className={classes.listItemText} primary={item} />
               </ListItem>
             ))}
           </List>
