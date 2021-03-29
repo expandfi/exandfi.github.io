@@ -59,6 +59,26 @@ const Hero = props => {
   const { className, ...rest } = props;
   const classes = useStyles();
 
+  const [email, setEmail] = React.useState('');
+  const [error, setError] = React.useState('');
+
+  const handleEmailValidation = event => {
+    let isValid = true;
+
+    setEmail(event.target.value);
+    if (typeof email !== "undefined") {
+      const emailRegEx = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+      if (!emailRegEx.test(email)) {
+        isValid = false;
+        setError("Please enter valid email address.");
+      } else {
+        setError("");
+      }
+      // setError('');
+    }
+    
+    console.log(email);
+  }
   const title = (
     <Typography variant="h2" component="span" className={classes.fontWeight900}>
       Expand your
@@ -98,7 +118,7 @@ const Hero = props => {
               title={title}
               subtitle={
                 <span className={classes.textWhite}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                     incididunt ut labore et dolore magna aliqua.
                 </span>
               }
@@ -118,7 +138,9 @@ const Hero = props => {
                     name="email"
                     fullWidth
                     type="email"
+                    onChange={handleEmailValidation}
                   />
+                  <div className="text-danger">{error}</div>
                   <Button
                   variant="contained"
                   type="submit"
