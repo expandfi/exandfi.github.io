@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
-import { Grid, TextField,Typography, Button } from '@material-ui/core';
+import { Grid, TextField, Typography, Button } from '@material-ui/core';
 import { Image } from 'components/atoms';
 import { SectionHeader, TypedText } from 'components/molecules';
 import { Section } from 'components/organisms';
@@ -26,6 +26,7 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.up('md')]: {
       flexDirection: 'row',
     },
+    backgroundImage: `url('./assets/hero-bg-image.png')`
   },
   section: {
     paddingTop: 0,
@@ -40,6 +41,43 @@ const useStyles = makeStyles(theme => ({
   },
   textWhite: {
     color: 'white',
+  },
+  text1: {
+    color: 'white',
+    fontWeight: 600,
+  },
+  text2: {
+    color: 'white',
+    fontWeight: 900,
+  },
+  text25: {
+    color: '#2BFFD8',
+    fontWeight: 900,
+  },
+  text3: {
+    fontSize:'1.5rem',
+    color: 'white',
+    fontWeight: 600,
+    marginBottom: '1rem'
+  },
+  text4: {
+    fontSize:'1.1rem',
+    color: 'white',
+    fontWeight: 600,
+    marginTop: '1rem'
+  },
+  emailField: {
+    background: '#FFFFFF',
+    border: '1px solid rgba(0, 0, 0, 0.2)',
+    boxShadow: 'inset 0px 1px 0px rgba(255, 255, 255, 0.1)',
+    borderRadius: '2px',
+  },
+  btn: { 
+    background:'#AA2CFF',
+    color: 'white',
+    fontSize: '1rem',
+    fontWeight: '600',
+    padding:'10px'
   },
   image: {
     alignSelf: 'flex-end',
@@ -60,14 +98,14 @@ const Hero = props => {
   const classes = useStyles();
 
   const title = (
-    <Typography variant="h2" component="span" className={classes.fontWeight900}>
+    <Typography variant="h2" component="span" className={classes.text2}>
       Expand your
       <br />
       <TypedText
         component="span"
         variant="h2"
         color="secondary"
-        className={classes.fontWeight900}
+        className={classes.text25}
         typedProps={{
           strings: [
             'reach',
@@ -84,61 +122,63 @@ const Hero = props => {
       />
     </Typography>
   );
+  
 
   return (
     <div className={clsx(classes.root, className)} {...rest}>
       <div className={classes.hero}>
         <Section className={classes.section}>
           <div className={classes.sectionHeader}>
-            <Typography variant="h6" gutterBottom className={classes.textWhite}>
+            <Typography variant="h4" gutterBottom className={classes.text1}>
               Own your customer
             </Typography>
             <SectionHeader
               titleVariant="h3"
               title={title}
               subtitle={
-                <span className={classes.textWhite}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-                    incididunt ut labore et dolore magna aliqua.
+                <span className={classes.text3}>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                  incididunt ut labore et dolore magna aliqua.
                 </span>
               }
-              ctaGroup={[
-                <div>
-                  <Typography
-                    variant="subtitle1"
-                    color="textPrimary"
-                    className={classes.inputTitle}
-                  >
-                    Get started today
-                  </Typography>
-                  <TextField
-                    placeholder="Enter your email"
-                    variant="outlined"
-                    size="medium"
-                    name="email"
-                    fullWidth
-                    type="email"
-                  />
-                  <Button
-                  variant="contained"
-                  type="submit"
-                  color="primary"
-                  size="large"
-                >
-                  JOIN OUR WAITLIST
-                  </Button>
-                  <Typography
-                    variant="subtitle1"
-                    color="textPrimary"
-                    className={classes.inputTitle}
-                  >
-                    Lorem ipsum dolor sit amet, consectetur adioiscing elit, sed do.
-                  </Typography>
-               </div>
-              ]}
               align="left"
               data-aos="fade-up"
             />
+            <Grid>
+            <Typography
+
+                    className={classes.text3}
+                  >
+                    Get started today
+                  </Typography>
+
+                  <Grid container spacing={1} alignItems="center" data-aos="fade-up">
+                    <Grid item xs={12} sm={7}>
+                      <TextField
+                        size="small"
+                        fullWidth
+                        label="Enter your email"
+                        className={classes.emailField}
+                      />
+                    </Grid>
+                    <Grid item xs={12} sm={5}>
+                      <Button
+                        fullWidth 
+                        className={classes.btn}
+                      >
+                        JOIN OUR WAITLIST
+                        </Button>
+                    </Grid>
+                  </Grid>
+
+                  <Typography
+                    variant="subtitle1"
+                    color="textPrimary"
+                    className={classes.text4}
+                  >
+                    Lorem ipsum dolor sit amet, consectetur adioiscing elit, sed do.
+                  </Typography>
+            </Grid>
           </div>
         </Section>
         <Image

@@ -2,11 +2,10 @@ import React from 'react';
 import { makeStyles,Button, Grid } from '@material-ui/core';
 import { Section, SectionAlternate } from 'components/organisms';
 import { SectionHeader } from 'components/molecules';
-import { Hero, AboutTop, Features, Integrations, Categories, Solutions, Reviews, Faq, Subscription } from './components';
+import { Hero, AboutTop, Features, Integrations, Pricings, Categories, Solutions, Reviews, } from './components';
 import {
     about,
     categories,
-    faq,
     features,
     integrations,
     solutions,
@@ -60,9 +59,9 @@ const ExpandfiHome = ({ themeMode }) => {
             <Reviews data={reviews} />
         </SectionAlternate>
 
-        {/* <Section className={classes.sectionNoPaddingTop}>
-          <Faq data={faq} />
-        </Section> */}
+        <SectionAlternate>
+            <Pricings />
+        </SectionAlternate>
 
         <Section>
             <Grid item xs={12}>
@@ -80,10 +79,6 @@ const ExpandfiHome = ({ themeMode }) => {
             />
             </Grid>
         </Section>
-
-        {/* <SectionAlternate innerNarrowed className={classes.sectionAlternate}>
-            <Subscription />
-        </SectionAlternate> */}
 
     </div>
   );

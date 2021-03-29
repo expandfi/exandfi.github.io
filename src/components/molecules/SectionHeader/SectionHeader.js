@@ -15,7 +15,17 @@ const useStyles = makeStyles(theme => ({
     marginBottom: 0,
   },
   title: {
-    fontWeight: 'bold',
+      fontFamily: 'Lato',
+      fontWeight: '900',
+      fontSize: '44px',
+      lineHeight: '50px',
+      color: '#121037',
+      marginBottom: '10px',
+    },
+  subtitle: {
+    fontFamily: 'Lato',
+    fontWeight: '600',
+    color: '#121037'
   },
   cta: {
     marginLeft: theme.spacing(1),
@@ -117,7 +127,7 @@ const SectionHeader = props => {
             variant={subtitleVariant || 'h6'}
             align={align || 'center'}
             color={subtitleColor || 'textSecondary'}
-            className="section-header__subtitle"
+            className={clsx("section-header__subtitle", classes.subtitle)}
             {...subtitleProps}
           >
             {subtitle}

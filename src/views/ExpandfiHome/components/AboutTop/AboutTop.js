@@ -7,7 +7,20 @@ import { SectionHeader } from 'components/molecules';
 
 const useStyles = makeStyles(theme => ({
   image: {
-    maxWidth: 400,
+    maxWidth: 600,
+  },
+  aboutTitle: {
+    fontFamily: 'Lato',
+    fontWeight: '900',
+    fontSize: '44px',
+    lineHeight: '50px',
+    color: '#121037',
+    marginBottom: '10px',
+  },
+  aboutBody: {
+    fontFamily: 'Lato',
+    fontWeight: '600',
+    color: '#121037',
   },
 }));
 
@@ -22,7 +35,7 @@ const AboutTop = props => {
 
   return (
     <div className={className} {...rest}>
-      <Grid container justify="space-between" spacing={isMd ? 4 : 2}>
+      <Grid container justify="space-between" spacing={isMd ? 6 : 2}>
         <Grid
           item
           container
@@ -47,15 +60,11 @@ const AboutTop = props => {
           data-aos={'fade-up'}
         >
           <div>
-            <SectionHeader
-              title={props.title}
-              subtitle="Send one-off and automated email, push, and in-app messages to people. Create better stories."
-              align="left"
-            />
-            <Typography align="left" variant="h6" color="textSecondary">
-              We get thousands of job postings weekly, but only accept the
-              openings at the top companies. We get thousands of job postings
-              weekly, but only accept the openings at the top companies.
+            <Typography className={classes.aboutTitle} title={props.title} align="left">
+              {props.title}
+            </Typography>
+            <Typography className={classes.aboutBody}align="left" variant="h6" color="textSecondary">
+              {props.body}
             </Typography>
           </div>
         </Grid>
