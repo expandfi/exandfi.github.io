@@ -97,6 +97,26 @@ const Hero = props => {
   const { className, ...rest } = props;
   const classes = useStyles();
 
+  const [email, setEmail] = React.useState('');
+  const [error, setError] = React.useState('');
+
+  const handleEmailValidation = event => {
+    let isValid = true;
+
+    setEmail(event.target.value);
+    if (typeof email !== "undefined") {
+      const emailRegEx = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+      if (!emailRegEx.test(email)) {
+        isValid = false;
+        setError("Please enter valid email address.");
+      } else {
+        setError("");
+      }
+      // setError('');
+    }
+    
+    console.log(email);
+  }
   const title = (
     <Typography variant="h2" component="span" className={classes.text2}>
       Expand your
@@ -155,11 +175,15 @@ const Hero = props => {
                   <Grid container spacing={1} alignItems="center" data-aos="fade-up">
                     <Grid item xs={12} sm={7}>
                       <TextField
-                        size="small"
-                        fullWidth
-                        label="Enter your email"
-                        className={classes.emailField}
-                      />
+                    placeholder="Enter your email"
+                    variant="outlined"
+                    size="medium"
+                    name="email"
+                    fullWidth
+                    type="email"
+                    onChange={handleEmailValidation}
+                  />
+                  <div className="text-danger">{error}</div>
                     </Grid>
                     <Grid item xs={12} sm={5}>
                       <Button
