@@ -209,11 +209,7 @@ const Hero = props => {
                       <Button
                         fullWidth 
                         className={classes.btn}
-<<<<<<< HEAD
-                        size="small"
-=======
                         disabled={disable}
->>>>>>> main
                       >
                         JOIN OUR WAITLIST
                         </Button>
