@@ -31,25 +31,24 @@ const ExpandfiHome = ({ themeMode }) => {
     <div>
         <Hero />
 
-        <SectionAlternate>
+        <Section gradient fullWidth>
+          <Section disablePadding>
             <AboutTop title={about[0].title} body={about[0].body} img={about[0].img} alt={about[0].title}/>
-         </SectionAlternate>
-
-         <Section>
-             <Features data={features} />
-         </Section>
-            
-        <SectionAlternate>
+          </Section>
+          <Section disablePadding>
+              <Features data={features} />
+          </Section>
+          <Section disablePadding>
             <AboutTop title={about[1].title} body={about[1].body} img={about[1].img} alt={about[1].title}/>
-        </SectionAlternate>
-
-        <SectionAlternate className={classes.integrationsSection}>
+          </Section>
+          <Section disablePadding>
             <Integrations data={integrations} />
-        </SectionAlternate>
-
-        <Section className={classes.sectionNoPaddingTop}>
-            <Categories data={categories} />
+          </Section>
         </Section>
+
+        <SectionAlternate className={classes.sectionNoPaddingTop}>
+            <Categories data={categories} />
+        </SectionAlternate>
 
         <SectionAlternate>
             <Solutions data={solutions} />
