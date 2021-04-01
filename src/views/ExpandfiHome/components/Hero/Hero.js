@@ -10,22 +10,14 @@ import axios from "axios";
 
 const useStyles = makeStyles(theme => ({
   root: {
-    // background: theme.palette.primary.dark,
-    backgroundImage: `url('./assets/hero-bg-image.png')`,
-    backgroundRepeat: 'no-repeat',
-    backgroundSize: '100% 100%',
-    paddingTop: theme.spacing(5),
-    paddingBottom: theme.spacing(5),
+    background: theme.palette.primary.dark,
+    paddingTop: theme.spacing(3),
     [theme.breakpoints.up('md')]: {
-      paddingTop: theme.spacing(8),
-      paddingBottom: theme.spacing(4),
+      paddingTop: theme.spacing(5),
     },
-    minHeight: 490,
     width: '100%',
     height: '100%',
     overflow: 'hidden',
-    zIndex: '10',
-    position: 'relative'
   },
   hero: {
     display: 'flex',
@@ -35,6 +27,7 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.up('md')]: {
       flexDirection: 'row',
     },
+    backgroundImage: `url('./assets/hero-bg-image.png')`
   },
   section: {
     paddingTop: 0,
@@ -43,7 +36,7 @@ const useStyles = makeStyles(theme => ({
   sectionHeader: {
     padding: theme.spacing(0, 2),
     [theme.breakpoints.up('md')]: {
-      maxWidth: '60%',
+      maxWidth: '50%',
       width: 'calc(100vw - 625px)',
     },
   },
@@ -53,27 +46,23 @@ const useStyles = makeStyles(theme => ({
   text1: {
     color: 'white',
     fontWeight: 600,
-    fontSize: '1.8rem'
-
   },
   text2: {
     color: 'white',
     fontWeight: 900,
-    fontSize: '3.4rem'
   },
   text25: {
     color: '#2BFFD8',
     fontWeight: 900,
-    fontSize: '3.4rem'
   },
   text3: {
-    fontSize:'1.3rem',
+    fontSize: '1.5rem',
     color: 'white',
     fontWeight: 600,
     marginBottom: '1rem'
   },
   text4: {
-    fontSize:'1rem',
+    fontSize: '1.1rem',
     color: 'white',
     fontWeight: 600,
     marginTop: '1rem'
@@ -121,13 +110,7 @@ const Hero = props => {
       const emailRegEx = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
       if (!emailRegEx.test(email)) {
         isValid = false;
-        setError(
-        <Typography
-          variant="subtitle2"
-          color="error"
-          >Please enter valid email address.
-        </Typography>
-        );
+        setError("Please enter valid email address.");
         setDisabled(true);
       } else {
         setError("");
@@ -158,7 +141,7 @@ const Hero = props => {
   const title = (
     <Typography variant="h2" component="span" className={classes.text2}>
       Expand your
-      {/* <br /> */}
+      <br />
       <TypedText
         component="span"
         variant="h2"
@@ -166,13 +149,13 @@ const Hero = props => {
         className={classes.text25}
         typedProps={{
           strings: [
-            ' reach',
-            ' channels',
-            ' relevance',
-            ' data',
-            ' sales',
-            ' profits',
-            ' value',
+            'reach',
+            'channels',
+            'relevance',
+            'data',
+            'sales',
+            'profits',
+            'value',
           ],
           typeSpeed: 50,
           loop: true,
@@ -212,36 +195,36 @@ const Hero = props => {
                   Get started today
                   </Typography>
 
-                  <Grid container spacing={1} alignItems="center" data-aos="fade-up">
-                    <Grid item xs={12} sm={7}>
-                      <TextField
-                      className={classes.emailField}
-                    placeholder="Enter your email"
-                    variant="outlined"
-                    size="small"
-                    name="email"
-                    fullWidth
-                    type="email"
-                    onChange={handleEmailValidation}
-                  />
-                  
-                    </Grid>
-                    <Grid item xs={12} sm={5}>
-                      <Button
-                        fullWidth 
-                        className={classes.btn}
-                        disabled={disable}
-                      >
-                        JOIN OUR WAITLIST
+                <Grid container spacing={1} alignItems="center" data-aos="fade-up">
+                  <Grid item xs={12} sm={7}>
+                    <TextField
+                      placeholder="Enter your email"
+                      variant="outlined"
+                      size="medium"
+                      name="email"
+                      fullWidth
+                      type="email"
+                      onChange={handleEmailValidation}
+                    />
+                    <div className="text-danger">{error} </div>
+                  </Grid>
+                  <Grid item xs={12} sm={5}>
+                    <Button
+                      fullWidth
+                      className={classes.btn}
+                      type="submit"
+                    >
+                      JOIN OUR WAITLIST
                         </Button>
                   </Grid>
-                  {error}
-                  <Typography
-                    variant="subtitle1"
-                    color="textPrimary"
-                    className={classes.text4}
-                  >
-                    Lorem ipsum dolor sit amet, consectetur adioiscing elit, sed do.
+                </Grid>
+
+                <Typography
+                  variant="subtitle1"
+                  color="textPrimary"
+                  className={classes.text4}
+                >
+                  Lorem ipsum dolor sit amet, consectetur adioiscing elit, sed do.
                   </Typography>
               </form>
             </Grid>
