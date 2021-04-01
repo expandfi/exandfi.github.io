@@ -25,6 +25,12 @@ const useStyles = makeStyles(theme => ({
   narrow: {
     maxWidth: 800,
   },
+  gradient: {
+    background: 'linear-gradient(180deg, #97B8FF 0%, rgba(255, 255, 255, 0) 100%)',
+    marginTop: '-30vh',
+    paddingTop: '35vh',
+    paddingBottom: 0
+  }
 }));
 
 /**
@@ -34,6 +40,7 @@ const useStyles = makeStyles(theme => ({
  */
 const Section = props => {
   const {
+    gradient,
     children,
     fullWidth,
     narrow,
@@ -52,6 +59,7 @@ const Section = props => {
         fullWidth ? classes.fullWidth : {},
         narrow ? classes.narrow : {},
         disablePadding ? classes.disablePadding : {},
+        gradient ? classes.gradient : {},
         className,
       )}
       {...rest}
@@ -82,6 +90,8 @@ Section.propTypes = {
    * Should the section render with no padding
    */
   disablePadding: PropTypes.bool,
+
+  gradient: PropTypes.bool,
 };
 
 export default Section;
