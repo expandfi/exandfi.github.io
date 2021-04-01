@@ -110,6 +110,7 @@ const Hero = props => {
 
   const [email, setEmail] = React.useState('');
   const [error, setError] = React.useState('');
+  const [disable, setDisabled] = React.useState(true);
 
   const handleEmailValidation = event => {
     let isValid = true;
@@ -125,10 +126,11 @@ const Hero = props => {
           color="error"
           >Please enter valid email address.
         </Typography>
-        
         );
+        setDisabled(true);
       } else {
         setError("");
+        setDisabled(false);
       }
     }
     
@@ -207,7 +209,11 @@ const Hero = props => {
                       <Button
                         fullWidth 
                         className={classes.btn}
+<<<<<<< HEAD
                         size="small"
+=======
+                        disabled={disable}
+>>>>>>> main
                       >
                         JOIN OUR WAITLIST
                         </Button>

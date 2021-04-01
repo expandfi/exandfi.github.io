@@ -8,7 +8,8 @@
     "start": "react-scripts start",
     "build": "cross-env GENERATE_SOURCEMAP=false react-scripts build",
     "prettier": "prettier --write '**/*.{js,css,html}'",
-    "clear-all": "rimraf ./build ./node_modules"
+    "clear-all": "rimraf ./build ./node_modules",
+    "seed": "node scripts/seedBD.js"
   },
   "eslintConfig": {
     "extends": [
@@ -34,10 +35,15 @@
     "@material-ui/pickers": "^3.2.10",
     "@material-ui/styles": "^4.2.1",
     "aos": "^2.3.4",
+    "axios": "^0.21.1",
+    "body-parser": "^1.19.0",
     "clsx": "^1.0.4",
+    "express": "^4.17.1",
+    "googleapis": "^39.2.0",
     "history": "^4.9.0",
     "jarallax": "^1.12.1",
     "leaflet": "^1.6.0",
+    "mongoose": "^5.12.2",
     "npm": "^7.4.2",
     "prop-types": "^15.7.2",
     "query-string": "^6.13.7",
