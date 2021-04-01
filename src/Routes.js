@@ -6,7 +6,7 @@
 import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import WithLayout from 'WithLayout';
-import { Main as MainLayout, Minimal as MinimalLayout, DocsLayout } from './layouts';
+import { Main as MainLayout, Minimal as MinimalLayout, DocsLayout, ExpandfiNav } from './layouts';
 
 import {
   ExpandfiHome as Expandfi,
@@ -69,7 +69,7 @@ const Routes = () => {
           <WithLayout
           {...matchprops}
           component={Expandfi}
-          layout={MainLayout}
+          layout={ExpandfiNav}
           />
         )}
       />
