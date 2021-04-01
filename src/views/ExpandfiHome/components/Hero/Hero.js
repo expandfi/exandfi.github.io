@@ -6,6 +6,7 @@ import { Grid, TextField, Typography, Button } from '@material-ui/core';
 import { Image } from 'components/atoms';
 import { SectionHeader, TypedText } from 'components/molecules';
 import { Section } from 'components/organisms';
+import axios from "axios";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -83,12 +84,12 @@ const useStyles = makeStyles(theme => ({
     boxShadow: 'inset 0px 1px 0px rgba(255, 255, 255, 0.1)',
     borderRadius: '2px',
   },
-  btn: { 
-    background:'#AA2CFF',
+  btn: {
+    background: '#AA2CFF',
     color: 'white',
     fontSize: '1rem',
     fontWeight: '600',
-    padding:'10px'
+    padding: '10px'
   },
   image: {
     alignSelf: 'flex-end',
@@ -133,9 +134,27 @@ const Hero = props => {
         setDisabled(false);
       }
     }
-    
-    // console.log(email);
+
+    console.log(email);
   }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    console.log('Email:', email);
+    // You should see email and password in console.
+    // ..code to submit form to backend here...
+    let config = {
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      }
+    }
+    axios.post('https://sheet.best/api/sheets/966ef6cc-b584-4515-8f7f-48ab10f3cfd4', email, config)
+      .then(response => {
+        console.log(response);
+      })
+
+  }
+
   const title = (
     <Typography variant="h2" component="span" className={classes.text2}>
       Expand your
@@ -161,7 +180,7 @@ const Hero = props => {
       />
     </Typography>
   );
-  
+
 
   return (
     <div className={clsx(classes.root, className)} {...rest}>
@@ -183,12 +202,14 @@ const Hero = props => {
               align="left"
               data-aos="fade-up"
             />
-            <Grid>
-            <Typography
 
-                    className={classes.text3}
-                  >
-                    Get started today
+            <Grid>
+              <form onSubmit={handleSubmit}>
+                <Typography
+
+                  className={classes.text3}
+                >
+                  Get started today
                   </Typography>
 
                   <Grid container spacing={1} alignItems="center" data-aos="fade-up">
@@ -213,7 +234,6 @@ const Hero = props => {
                       >
                         JOIN OUR WAITLIST
                         </Button>
-                    </Grid>
                   </Grid>
                   {error}
                   <Typography
@@ -223,6 +243,7 @@ const Hero = props => {
                   >
                     Lorem ipsum dolor sit amet, consectetur adioiscing elit, sed do.
                   </Typography>
+              </form>
             </Grid>
           </div>
         </Section>
