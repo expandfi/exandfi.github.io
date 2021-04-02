@@ -2,10 +2,11 @@ import React from 'react';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
+// import { props } from 'views/WebBasic/data';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    background: theme.palette.alternate.main,
+    background: '#030195'
   },
   inner: {
     maxWidth: theme.layout.contentWidth,
@@ -30,13 +31,14 @@ const useStyles = makeStyles(theme => ({
  * @param {Object} props
  */
 const SectionAlternate = props => {
-  const { children, innerNarrowed, className, ...rest } = props;
+  const { image, children, innerNarrowed, className, ...rest } = props;
 
   const classes = useStyles();
 
   return (
     <section
       className={clsx('section-alternate', classes.root, className)}
+      style={{backgroundImage: image}}
       {...rest}
     >
       <div
@@ -53,6 +55,7 @@ const SectionAlternate = props => {
 };
 
 SectionAlternate.propTypes = {
+  image: PropTypes.string,
   /**
    * External classes
    */

@@ -6,6 +6,7 @@ import { Grid, TextField, Typography, Button, Modal } from '@material-ui/core';
 import { Image } from 'components/atoms';
 import { SectionHeader, TypedText } from 'components/molecules';
 import { Section } from 'components/organisms';
+import axios from "axios";
 
 function getModalStyle() {
   const top = 50;
@@ -20,22 +21,14 @@ function getModalStyle() {
 
 const useStyles = makeStyles(theme => ({
   root: {
-    // background: theme.palette.primary.dark,
-    backgroundImage: `url('./assets/hero-bg-image.png')`,
-    backgroundRepeat: 'no-repeat',
-    backgroundSize: '100% 100%',
-    paddingTop: theme.spacing(5),
-    paddingBottom: theme.spacing(5),
+    background: theme.palette.primary.dark,
+    paddingTop: theme.spacing(3),
     [theme.breakpoints.up('md')]: {
-      paddingTop: theme.spacing(8),
-      paddingBottom: theme.spacing(4),
+      paddingTop: theme.spacing(5),
     },
-    minHeight: 490,
     width: '100%',
     height: '100%',
     overflow: 'hidden',
-    zIndex: '10',
-    position: 'relative'
   },
   hero: {
     display: 'flex',
@@ -45,6 +38,7 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.up('md')]: {
       flexDirection: 'row',
     },
+    backgroundImage: `url('./assets/hero-bg-image.png')`
   },
   section: {
     paddingTop: 0,
@@ -53,7 +47,7 @@ const useStyles = makeStyles(theme => ({
   sectionHeader: {
     padding: theme.spacing(0, 2),
     [theme.breakpoints.up('md')]: {
-      maxWidth: '60%',
+      maxWidth: '50%',
       width: 'calc(100vw - 625px)',
     },
   },
@@ -63,18 +57,14 @@ const useStyles = makeStyles(theme => ({
   text1: {
     color: 'white',
     fontWeight: 600,
-    fontSize: '1.8rem'
-
   },
   text2: {
     color: 'white',
     fontWeight: 900,
-    fontSize: '3.4rem'
   },
   text25: {
     color: '#2BFFD8',
     fontWeight: 900,
-    fontSize: '3.4rem'
   },
   text3: {
     fontSize: '1.3rem',
@@ -162,13 +152,30 @@ const Hero = props => {
         setDisabled(false);
       }
     }
-
     // console.log(email);
   }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    console.log('Email:', email);
+    // You should see email and password in console.
+    // ..code to submit form to backend here...
+    let config = {
+      headers: {
+        'Content-Type': 'application/json',
+      }
+    }
+    axios.post('https://sheet.best/api/sheets/966ef6cc-b584-4515-8f7f-48ab10f3cfd4', {Email: email}, config)
+      .then(response => {
+        console.log(response);
+      })
+
+  }
+
   const title = (
     <Typography variant="h2" component="span" className={classes.text2}>
       Expand your
-      {/* <br /> */}
+      <br />
       <TypedText
         component="span"
         variant="h2"
@@ -176,13 +183,13 @@ const Hero = props => {
         className={classes.text25}
         typedProps={{
           strings: [
-            ' reach',
-            ' channels',
-            ' relevance',
-            ' data',
-            ' sales',
-            ' profits',
-            ' value',
+            'reach',
+            'channels',
+            'relevance',
+            'data',
+            'sales',
+            'profits',
+            'value',
           ],
           typeSpeed: 50,
           loop: true,
@@ -239,6 +246,7 @@ const Hero = props => {
               align="left"
               data-aos="fade-up"
             />
+``
             <Grid>
               <Typography
 
@@ -259,7 +267,6 @@ const Hero = props => {
                     type="email"
                     onChange={handleEmailValidation}
                   />
-
                 </Grid>
                 <Grid item xs={12} sm={5}>
                   <Button
@@ -289,6 +296,7 @@ const Hero = props => {
               >
                 Lorem ipsum dolor sit amet, consectetur adioiscing elit, sed do.
                   </Typography>
+              </form>
             </Grid>
           </div>
         </Section>

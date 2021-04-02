@@ -7,8 +7,8 @@ import { Icon } from 'components/atoms';
 
 const useStyles = makeStyles(theme => ({
   extraSmall: {
-    width: 20,
-    height: 20,
+    width: 25,
+    height: 25,
   },
   small: {
     width: 50,
@@ -49,7 +49,7 @@ const IconAlternate = props => {
   const classes = useStyles();
   const useBackgroundStyles = makeStyles(() => ({
     background: {
-      background: color[50],
+      background: '#F9B800',
     },
   }));
   const backgroundClasses = useBackgroundStyles();
@@ -68,7 +68,7 @@ const IconAlternate = props => {
       <Icon
         size={size}
         fontIconClass={fontIconClass}
-        fontIconColor={color[500]}
+        fontIconColor='white'
         className="icon-alternate__icon"
         {...iconProps}
       />

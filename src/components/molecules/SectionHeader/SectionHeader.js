@@ -22,10 +22,12 @@ const useStyles = makeStyles(theme => ({
       color: '#121037',
       marginBottom: '10px',
     },
-  subtitle: {
-    fontFamily: 'Lato',
+    subtitle: {
+    fontFamily: 'Open Sans',
     fontWeight: '600',
-    color: '#121037'
+    color: '#121037',
+    lineHeight: '28px',
+    fontSize:'20px'
   },
   cta: {
     marginLeft: theme.spacing(1),
@@ -33,6 +35,7 @@ const useStyles = makeStyles(theme => ({
       marginLeft: theme.spacing(0),
     },
   },
+
 }));
 
 /**
