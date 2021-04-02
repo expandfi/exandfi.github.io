@@ -24,7 +24,7 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-const ExpandfiHome = ({ themeMode }) => {
+const ExpandfiHome = ({ open, setOpen, themeMode }) => {
   const classes = useStyles();
 
   return (
@@ -69,7 +69,7 @@ const ExpandfiHome = ({ themeMode }) => {
                 subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
                 align="center"
                 ctaGroup={[
-                <Button color="primary" variant="contained" size="large">
+                <Button color="primary" variant="contained" size="large" onClick={() => setOpen(true)}>
                     Get Started
                 </Button>,
                 ]}

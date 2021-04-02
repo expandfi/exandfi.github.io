@@ -13,7 +13,7 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-const ExpandfiNav = ({ themeMode, children, className }) => {
+const ExpandfiNav = ({ openModal, themeMode, children, className }) => {
   const classes = useStyles();
 
   return (
