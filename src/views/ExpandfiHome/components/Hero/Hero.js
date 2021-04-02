@@ -6,6 +6,8 @@ import { Grid, TextField, Typography, Button, Modal } from '@material-ui/core';
 import { Image } from 'components/atoms';
 import { SectionHeader, TypedText } from 'components/molecules';
 import { Section } from 'components/organisms';
+import SweetAlert from 'sweetalert-react';
+import "../../../../../node_modules/sweetalert/dist/sweetalert.css";
 import axios from "axios";
 
 const useStyles = makeStyles(theme => ({
@@ -101,6 +103,7 @@ const Hero = props => {
   const [email, setEmail] = React.useState('');
   const [error, setError] = React.useState('');
   const [disable, setDisabled] = React.useState(true);
+  const [show, setShow] = React.useState(false)
 
   const handleEmailValidation = event => {
     let isValid = true;
@@ -139,6 +142,7 @@ const Hero = props => {
     axios.post('https://sheet.best/api/sheets/966ef6cc-b584-4515-8f7f-48ab10f3cfd4', { Email: email }, config)
       .then(response => {
         console.log(response);
+        setShow(true);
       })
 
   }
@@ -191,43 +195,49 @@ const Hero = props => {
               data-aos="fade-up"
             />
             <Grid>
-                <Typography className={classes.text3}>
-                  Get started today
+              <Typography className={classes.text3}>
+                Get started today
                 </Typography>
 
-                <Grid container spacing={1} alignItems="center" data-aos="fade-up">
-                  <Grid item xs={12} sm={7}>
-                    <TextField
-                      className={classes.emailField}
-                      placeholder="Enter your email"
-                      variant="outlined"
-                      size="small"
-                      name="email"
-                      fullWidth
-                      type="email"
-                      onChange={handleEmailValidation}
-                    />
-                  </Grid>
-                  <Grid item xs={12} sm={5}>
-                    <Button
-                      fullWidth
-                      className={classes.btn}
-                      size="small"
-                      disabled={disable}
+              <Grid container spacing={1} alignItems="center" data-aos="fade-up">
+                <Grid item xs={12} sm={7}>
+                  <TextField
+                    className={classes.emailField}
+                    placeholder="Enter your email"
+                    variant="outlined"
+                    size="small"
+                    name="email"
+                    fullWidth
+                    type="email"
+                    onChange={handleEmailValidation}
+                  />
+                </Grid>
+                <Grid item xs={12} sm={5}>
+                  <Button
+                    fullWidth
+                    className={classes.btn}
+                    size="small"
+                    disabled={disable}
                     // onClick={handleOpen}
                     onClick={handleSubmit}
-                    >
-                      JOIN OUR WAITLIST
+                  >
+                    JOIN OUR WAITLIST
                   </Button>
-                  </Grid>
                 </Grid>
-                {error}
-                <Typography
-                  variant="subtitle1"
-                  color="textPrimary"
-                  className={classes.text4}
-                >
-                  Lorem ipsum dolor sit amet, consectetur adioiscing elit, sed do.
+                <SweetAlert
+                  show={show}
+                  type="success"
+                  title="You're on the list!"
+                  onConfirm={() => setShow(false)}
+                />
+              </Grid>
+              {error}
+              <Typography
+                variant="subtitle1"
+                color="textPrimary"
+                className={classes.text4}
+              >
+                Lorem ipsum dolor sit amet, consectetur adioiscing elit, sed do.
                   </Typography>
             </Grid>
           </div>
