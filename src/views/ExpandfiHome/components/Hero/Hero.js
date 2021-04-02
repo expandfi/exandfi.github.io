@@ -165,7 +165,7 @@ const Hero = props => {
         'Content-Type': 'application/json',
       }
     }
-    axios.post('https://sheet.best/api/sheets/966ef6cc-b584-4515-8f7f-48ab10f3cfd4', {Email: email}, config)
+    axios.post('https://sheet.best/api/sheets/966ef6cc-b584-4515-8f7f-48ab10f3cfd4', { Email: email }, config)
       .then(response => {
         console.log(response);
       })
@@ -204,24 +204,25 @@ const Hero = props => {
       <p id="simple-modal-description">
         Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
       </p>
-        <TextField
-          className={classes.emailField}
-          placeholder="Enter your email"
-          variant="outlined"
-          size="small"
-          name="email"
-          fullWidth
-          type="email"
-          onChange={handleEmailValidation}
-        />
-        <Button
-          fullWidth
-          className={classes.btn}
-          size="small"
-          disabled={disable}
-          onClick={handleOpen}
-        >
-          JOIN OUR WAITLIST
+      <TextField
+        className={classes.emailField}
+        placeholder="Enter your email"
+        variant="outlined"
+        size="small"
+        name="email"
+        fullWidth
+        type="email"
+        onChange={handleEmailValidation}
+      />
+      <Button
+        fullWidth
+        className={classes.btn}
+        size="small"
+        disabled={disable}
+        onClick={handleOpen}
+        onClick={handleSubmit}
+      >
+        JOIN OUR WAITLIST
         </Button>
     </div>
   );
@@ -246,8 +247,8 @@ const Hero = props => {
               align="left"
               data-aos="fade-up"
             />
-``
             <Grid>
+              <form onSubmit={handleSubmit}>
               <Typography
 
                 className={classes.text3}
@@ -274,7 +275,7 @@ const Hero = props => {
                     className={classes.btn}
                     size="small"
                     disabled={disable}
-                    onClick={handleOpen}
+                    // onClick={handleOpen}
                   >
                     JOIN OUR WAITLIST
                         </Button>
@@ -300,14 +301,14 @@ const Hero = props => {
             </Grid>
           </div>
         </Section>
-        <Image
-          src="https://assets.maccarianagency.com/the-front/illustrations/macbook-dashboard.png"
-          className={classes.image}
-          data-aos="fade-up"
-          lazy={false}
-        />
-      </div>
+      <Image
+        src="https://assets.maccarianagency.com/the-front/illustrations/macbook-dashboard.png"
+        className={classes.image}
+        data-aos="fade-up"
+        lazy={false}
+      />
     </div>
+    </div >
   );
 };
 
