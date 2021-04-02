@@ -8,17 +8,6 @@ import { SectionHeader, TypedText } from 'components/molecules';
 import { Section } from 'components/organisms';
 import axios from "axios";
 
-function getModalStyle() {
-  const top = 50;
-  const left = 50;
-
-  return {
-    top: `${top}%`,
-    left: `${left}%`,
-    transform: `translate(-${top}%, -${left}%)`,
-  };
-}
-
 const useStyles = makeStyles(theme => ({
   root: {
     background: theme.palette.primary.dark,
@@ -103,14 +92,6 @@ const useStyles = makeStyles(theme => ({
       transform: 'translateY(-50%) !important',
     },
   },
-  paper: {
-    position: 'absolute',
-    width: 400,
-    backgroundColor: theme.palette.background.paper,
-    border: '2px solid #000',
-    boxShadow: theme.shadows[5],
-    padding: theme.spacing(2, 4, 3),
-  }
 }));
 
 const Hero = props => {
@@ -120,16 +101,6 @@ const Hero = props => {
   const [email, setEmail] = React.useState('');
   const [error, setError] = React.useState('');
   const [disable, setDisabled] = React.useState(true);
-  const [open, setOpen] = React.useState(false);
-  const [modalStyle] = React.useState(getModalStyle);
-
-  const handleOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
 
   const handleEmailValidation = event => {
     let isValid = true;
@@ -198,34 +169,6 @@ const Hero = props => {
     </Typography>
   );
 
-  const body = (
-    <div style={modalStyle} className={classes.paper}>
-      <h2 id="simple-modal-title">Join Our Waitlist</h2>
-      <p id="simple-modal-description">
-        Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-      </p>
-      <TextField
-        className={classes.emailField}
-        placeholder="Enter your email"
-        variant="outlined"
-        size="small"
-        name="email"
-        fullWidth
-        type="email"
-        onChange={handleEmailValidation}
-      />
-      <Button
-        fullWidth
-        className={classes.btn}
-        size="small"
-        disabled={disable}
-        onClick={handleOpen}
-        onClick={handleSubmit}
-      >
-        JOIN OUR WAITLIST
-        </Button>
-    </div>
-  );
 
   return (
     <div className={clsx(classes.root, className)} {...rest}>
@@ -248,66 +191,54 @@ const Hero = props => {
               data-aos="fade-up"
             />
             <Grid>
-              <form onSubmit={handleSubmit}>
-              <Typography
+                <Typography className={classes.text3}>
+                  Get started today
+                </Typography>
 
-                className={classes.text3}
-              >
-                Get started today
-                  </Typography>
-
-              <Grid container spacing={1} alignItems="center" data-aos="fade-up">
-                <Grid item xs={12} sm={7}>
-                  <TextField
-                    className={classes.emailField}
-                    placeholder="Enter your email"
-                    variant="outlined"
-                    size="small"
-                    name="email"
-                    fullWidth
-                    type="email"
-                    onChange={handleEmailValidation}
-                  />
-                </Grid>
-                <Grid item xs={12} sm={5}>
-                  <Button
-                    fullWidth
-                    className={classes.btn}
-                    size="small"
-                    disabled={disable}
+                <Grid container spacing={1} alignItems="center" data-aos="fade-up">
+                  <Grid item xs={12} sm={7}>
+                    <TextField
+                      className={classes.emailField}
+                      placeholder="Enter your email"
+                      variant="outlined"
+                      size="small"
+                      name="email"
+                      fullWidth
+                      type="email"
+                      onChange={handleEmailValidation}
+                    />
+                  </Grid>
+                  <Grid item xs={12} sm={5}>
+                    <Button
+                      fullWidth
+                      className={classes.btn}
+                      size="small"
+                      disabled={disable}
                     // onClick={handleOpen}
-                  >
-                    JOIN OUR WAITLIST
-                        </Button>
+                    onClick={handleSubmit}
+                    >
+                      JOIN OUR WAITLIST
+                  </Button>
+                  </Grid>
                 </Grid>
-                <Modal
-                  open={open}
-                  onClose={handleClose}
-                  aria-labelledby="simple-modal-title"
-                  aria-describedby="simple-modal-description"
+                {error}
+                <Typography
+                  variant="subtitle1"
+                  color="textPrimary"
+                  className={classes.text4}
                 >
-                  {body}
-                </Modal>
-              </Grid>
-              {error}
-              <Typography
-                variant="subtitle1"
-                color="textPrimary"
-                className={classes.text4}
-              >
-                Lorem ipsum dolor sit amet, consectetur adioiscing elit, sed do.
+                  Lorem ipsum dolor sit amet, consectetur adioiscing elit, sed do.
                   </Typography>
-              </form>
             </Grid>
           </div>
         </Section>
-      <Image
-        src="https://assets.maccarianagency.com/the-front/illustrations/macbook-dashboard.png"
-        className={classes.image}
-        data-aos="fade-up"
-        lazy={false}
-      />
-    </div>
+        <Image
+          src="https://assets.maccarianagency.com/the-front/illustrations/macbook-dashboard.png"
+          className={classes.image}
+          data-aos="fade-up"
+          lazy={false}
+        />
+      </div>
     </div >
   );
 };
