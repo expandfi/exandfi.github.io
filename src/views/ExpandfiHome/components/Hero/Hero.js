@@ -128,10 +128,10 @@ const Hero = props => {
     // ..code to submit form to backend here...
     let config = {
       headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
+        'Content-Type': 'application/json',
       }
     }
-    axios.post('https://sheet.best/api/sheets/966ef6cc-b584-4515-8f7f-48ab10f3cfd4', email, config)
+    axios.post('https://sheet.best/api/sheets/966ef6cc-b584-4515-8f7f-48ab10f3cfd4', {Email:email}, config)
       .then(response => {
         console.log(response);
       })
