@@ -32,37 +32,37 @@ const ExpandfiHome = ({ themeMode }) => {
         <Hero />
 
         <Section gradient fullWidth>
-          <Section disablePadding>
+          <Section >
             <AboutTop title={about[0].title} body={about[0].body} img={about[0].img} alt={about[0].title}/>
           </Section>
-          <Section disablePadding>
+          <Section >
               <Features data={features} />
           </Section>
-          <Section disablePadding>
+          <Section >
             <AboutTop title={about[1].title} body={about[1].body} img={about[1].img} alt={about[1].title}/>
           </Section>
-          <Section disablePadding>
+          <Section >
             <Integrations data={integrations} />
           </Section>
         </Section>
 
-        <SectionAlternate className={classes.sectionNoPaddingTop}>
+        <SectionAlternate image="url('./assets/categoriesBG.png')" className={classes.sectionNoPaddingTop}>
             <Categories data={categories} />
         </SectionAlternate>
 
-        <SectionAlternate>
+        <Section>
             <Solutions data={solutions} />
-        </SectionAlternate>
+        </Section>
 
-        <SectionAlternate className={classes.reviewSection}>
+        <SectionAlternate image="url('./assets/testimonialBG.png')" className={classes.reviewSection}>
             <Reviews data={reviews} />
         </SectionAlternate>
 
-        <SectionAlternate>
-            <Pricings />
-        </SectionAlternate>
-
         <Section>
+            <Pricings />
+        </Section>
+
+        <SectionAlternate>
             <Grid item xs={12}>
             <SectionHeader
                 title="Grow your business with ExpandFi"
@@ -77,7 +77,10 @@ const ExpandfiHome = ({ themeMode }) => {
                 data-aos="fade-up"
             />
             </Grid>
-        </Section>
+        </SectionAlternate>
+        <Button className={classes.toTop}>
+              Back to the top
+        </Button>
 
     </div>
   );

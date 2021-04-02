@@ -88,7 +88,7 @@ const useStyles = makeStyles(theme => ({
     color: 'white',
     fontSize: '1rem',
     fontWeight: '600',
-    padding:'10px'
+    padding:'10px 20px 10px 20px'
   },
   image: {
     alignSelf: 'flex-end',
@@ -207,13 +207,8 @@ const Hero = props => {
                     </Grid>
                     <Grid item xs={12} sm={5}>
                       <Button
-                        fullWidth 
                         className={classes.btn}
-<<<<<<< HEAD
                         size="small"
-=======
-                        disabled={disable}
->>>>>>> main
                       >
                         JOIN OUR WAITLIST
                         </Button>

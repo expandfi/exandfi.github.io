@@ -8,7 +8,6 @@ import {
   ListItem,
   Typography,
   Button,
-  Popover,
 
 } from '@material-ui/core';
 import { Image } from 'components/atoms';
@@ -31,11 +30,60 @@ const useStyles = makeStyles(theme => ({
       height: 32,
     },
   },
+  navigationContainer: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    margin: 'auto'
+  },
   logoImage: {
     width: '85%',
     height: '85%',
   },
+  listItem: {
+    cursor: 'pointer',
+    '&:hover > .menu-item, &:hover svg': {
+      color: theme.palette.primary.dark,
+    },
+    '&.menu-item--no-dropdown': {
+      paddingRight: 0,
+    },
+  },
+  btn: { 
+    background:'#AA2CFF',
+    color: 'white',
+    fontSize: '1rem',
+    fontWeight: '600',
+    padding:'10px 20px 10px 20px',
+    height: '2.8rem',
+    marginRight: '-20px'
+  },
 }));
+
+
+const nav = [
+  {
+    title:'Features',
+    anchor:'#'
+  },
+  {
+    title:'How It Works',
+    anchor:'#'
+  },
+  {
+    title:'Testimonials',
+    anchor:'#'
+  },
+  {
+    title:'Pricing',
+    anchor:'#'
+  },
+  {
+    title:'FAQ',
+    anchor:'#'
+  },
+  
+]
 
 const Topbar = ({ themeMode, className, ...rest }) => {
   const classes = useStyles();
@@ -52,38 +100,22 @@ const Topbar = ({ themeMode, className, ...rest }) => {
           />
         </a>
       </div>
-      <List>
-        <ListItem>
-          <Typography>
-            Features
+
+      <List className={classes.navigationContainer}>
+      {nav.map((link)=> (
+        <ListItem className={classes.listItem}>
+          <Typography noWrap>
+            {link.title}
           </Typography>
         </ListItem>
-        <ListItem>
-          <Typography>
-            How It Works
-          </Typography>
-        </ListItem>
-        <ListItem>
-          <Typography>
-            Testimonials
-          </Typography>
-        </ListItem>
-        <ListItem>
-          <Typography>
-            Pricing
-          </Typography>
-        </ListItem>
-        <ListItem>
-          <Typography>
-            FAQ
-          </Typography>
-        </ListItem>
-        <ListItem>
-          <Button>
-            JOIN OUR WAITLIST
-          </Button>
-        </ListItem>
+      ))}
       </List>
+      <Button
+        className={classes.btn}
+        size="small"
+        >
+        SIGN UP
+        </Button>
     </Toolbar>
   );
 };

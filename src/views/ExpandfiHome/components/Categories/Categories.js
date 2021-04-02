@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
-import { Grid } from '@material-ui/core';
+import { Grid, Typography } from '@material-ui/core';
 import { Image } from 'components/atoms';
 import { SectionHeader } from 'components/molecules';
 import { DescriptionListIcon, CardBase } from 'components/organisms';
@@ -23,6 +23,14 @@ const useStyles = makeStyles(theme => ({
     borderRadius: theme.spacing(2),
     background: theme.palette.alternate.main,
   },
+  altTitle: {
+    fontFamily: 'Lato',
+    fontWeight: '900',
+    fontSize: '32px',
+    lineHeight: '40px',
+    color: 'white',
+    marginBottom: '30px',
+  }
 }));
 
 const Categories = props => {
@@ -31,7 +39,9 @@ const Categories = props => {
 
   return (
     <div className={className} {...rest}>
-      <SectionHeader title="How does it work?" align="center" />
+      <Typography className={classes.altTitle} align='center' >
+        How does it work?
+      </Typography>
       <Grid container spacing={6}>
         {data.map((item, index) => (
           <Grid item xs={6} md={3} key={index} data-aos="fade-up">

@@ -18,9 +18,11 @@ const useStyles = makeStyles(theme => ({
     marginBottom: '10px',
   },
   aboutBody: {
-    fontFamily: 'Lato',
+    fontFamily: 'Open Sans',
     fontWeight: '600',
     color: '#121037',
+    lineHeight: '28px',
+    fontSize:'20px'
   },
 }));
 
@@ -35,7 +37,7 @@ const AboutTop = props => {
 
   return (
     <div className={className} {...rest}>
-      <Grid container justify="space-between" spacing={isMd ? 6 : 2}>
+      <Grid container justify="space-between" spacing={isMd ? 8: 4}>
         <Grid
           item
           container
@@ -46,7 +48,7 @@ const AboutTop = props => {
           data-aos={'fade-up'}
         >
           <Image
-            src={props.img}
+            src={props.img} 
             alt={props.alt}
             className={classes.image}
           />
@@ -54,7 +56,7 @@ const AboutTop = props => {
         <Grid
           item
           container
-          alignItems="center"
+          // alignItems="center"
           xs={12}
           md={6}
           data-aos={'fade-up'}
@@ -63,7 +65,7 @@ const AboutTop = props => {
             <Typography className={classes.aboutTitle} title={props.title} align="left">
               {props.title}
             </Typography>
-            <Typography className={classes.aboutBody}align="left" variant="h6" color="textSecondary">
+            <Typography className={classes.aboutBody}align="left">
               {props.body}
             </Typography>
           </div>

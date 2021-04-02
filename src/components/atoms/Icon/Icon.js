@@ -6,7 +6,7 @@ import NoSsr from '@material-ui/core/NoSsr';
 
 const useStyles = makeStyles(() => ({
   extraSmall: {
-    fontSize: 10,
+    fontSize: 12,
   },
   small: {
     fontSize: 20,
