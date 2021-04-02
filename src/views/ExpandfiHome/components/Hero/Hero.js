@@ -2,11 +2,22 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
-import { Grid, TextField, Typography, Button } from '@material-ui/core';
+import { Grid, TextField, Typography, Button, Modal } from '@material-ui/core';
 import { Image } from 'components/atoms';
 import { SectionHeader, TypedText } from 'components/molecules';
 import { Section } from 'components/organisms';
 import axios from "axios";
+
+function getModalStyle() {
+  const top = 50;
+  const left = 50;
+
+  return {
+    top: `${top}%`,
+    left: `${left}%`,
+    transform: `translate(-${top}%, -${left}%)`,
+  };
+}
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -56,13 +67,13 @@ const useStyles = makeStyles(theme => ({
     fontWeight: 900,
   },
   text3: {
-    fontSize: '1.5rem',
+    fontSize: '1.3rem',
     color: 'white',
     fontWeight: 600,
     marginBottom: '1rem'
   },
   text4: {
-    fontSize: '1.1rem',
+    fontSize: '1rem',
     color: 'white',
     fontWeight: 600,
     marginTop: '1rem'
@@ -78,7 +89,7 @@ const useStyles = makeStyles(theme => ({
     color: 'white',
     fontSize: '1rem',
     fontWeight: '600',
-    padding:'10px 20px 10px 20px'
+    padding: '10px'
   },
   image: {
     alignSelf: 'flex-end',
@@ -92,6 +103,14 @@ const useStyles = makeStyles(theme => ({
       transform: 'translateY(-50%) !important',
     },
   },
+  paper: {
+    position: 'absolute',
+    width: 400,
+    backgroundColor: theme.palette.background.paper,
+    border: '2px solid #000',
+    boxShadow: theme.shadows[5],
+    padding: theme.spacing(2, 4, 3),
+  }
 }));
 
 const Hero = props => {
@@ -101,6 +120,16 @@ const Hero = props => {
   const [email, setEmail] = React.useState('');
   const [error, setError] = React.useState('');
   const [disable, setDisabled] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
+  const [modalStyle] = React.useState(getModalStyle);
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   const handleEmailValidation = event => {
     let isValid = true;
@@ -110,15 +139,20 @@ const Hero = props => {
       const emailRegEx = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
       if (!emailRegEx.test(email)) {
         isValid = false;
-        setError("Please enter valid email address.");
+        setError(
+          <Typography
+            variant="subtitle2"
+            color="error"
+          >Please enter valid email address.
+        </Typography>
+        );
         setDisabled(true);
       } else {
         setError("");
         setDisabled(false);
       }
     }
-
-    //console.log(email);
+    // console.log(email);
   }
 
   function handleSubmit(event) {
@@ -164,6 +198,33 @@ const Hero = props => {
     </Typography>
   );
 
+  const body = (
+    <div style={modalStyle} className={classes.paper}>
+      <h2 id="simple-modal-title">Join Our Waitlist</h2>
+      <p id="simple-modal-description">
+        Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+      </p>
+        <TextField
+          className={classes.emailField}
+          placeholder="Enter your email"
+          variant="outlined"
+          size="small"
+          name="email"
+          fullWidth
+          type="email"
+          onChange={handleEmailValidation}
+        />
+        <Button
+          fullWidth
+          className={classes.btn}
+          size="small"
+          disabled={disable}
+          onClick={handleOpen}
+        >
+          JOIN OUR WAITLIST
+        </Button>
+    </div>
+  );
 
   return (
     <div className={clsx(classes.root, className)} {...rest}>
@@ -187,18 +248,17 @@ const Hero = props => {
             />
 ``
             <Grid>
-              <form onSubmit={handleSubmit}>
-                <Typography
+              <Typography
 
-                  className={classes.text3}
-                >
-                  Get started today
+                className={classes.text3}
+              >
+                Get started today
                   </Typography>
 
-                  <Grid container spacing={1} alignItems="center" data-aos="fade-up">
-                    <Grid item xs={12} sm={7}>
-                      <TextField
-                      className={classes.emailField}
+              <Grid container spacing={1} alignItems="center" data-aos="fade-up">
+                <Grid item xs={12} sm={7}>
+                  <TextField
+                    className={classes.emailField}
                     placeholder="Enter your email"
                     variant="outlined"
                     size="small"
@@ -207,24 +267,34 @@ const Hero = props => {
                     type="email"
                     onChange={handleEmailValidation}
                   />
-                  
-                    </Grid>
-                    <Grid item xs={12} sm={5}>
-                      <Button
-                        className={classes.btn}
-                        size="small"
-                      >
-                        JOIN OUR WAITLIST
-                        </Button>
-                  </Grid>
                 </Grid>
-
-                <Typography
-                  variant="subtitle1"
-                  color="textPrimary"
-                  className={classes.text4}
+                <Grid item xs={12} sm={5}>
+                  <Button
+                    fullWidth
+                    className={classes.btn}
+                    size="small"
+                    disabled={disable}
+                    onClick={handleOpen}
+                  >
+                    JOIN OUR WAITLIST
+                        </Button>
+                </Grid>
+                <Modal
+                  open={open}
+                  onClose={handleClose}
+                  aria-labelledby="simple-modal-title"
+                  aria-describedby="simple-modal-description"
                 >
-                  Lorem ipsum dolor sit amet, consectetur adioiscing elit, sed do.
+                  {body}
+                </Modal>
+              </Grid>
+              {error}
+              <Typography
+                variant="subtitle1"
+                color="textPrimary"
+                className={classes.text4}
+              >
+                Lorem ipsum dolor sit amet, consectetur adioiscing elit, sed do.
                   </Typography>
               </form>
             </Grid>
