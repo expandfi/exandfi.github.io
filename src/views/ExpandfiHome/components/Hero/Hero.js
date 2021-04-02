@@ -78,7 +78,7 @@ const useStyles = makeStyles(theme => ({
     color: 'white',
     fontSize: '1rem',
     fontWeight: '600',
-    padding: '10px'
+    padding:'10px 20px 10px 20px'
   },
   image: {
     alignSelf: 'flex-end',
@@ -195,26 +195,26 @@ const Hero = props => {
                   Get started today
                   </Typography>
 
-                <Grid container spacing={1} alignItems="center" data-aos="fade-up">
-                  <Grid item xs={12} sm={7}>
-                    <TextField
-                      placeholder="Enter your email"
-                      variant="outlined"
-                      size="medium"
-                      name="email"
-                      fullWidth
-                      type="email"
-                      onChange={handleEmailValidation}
-                    />
-                    <div className="text-danger">{error} </div>
-                  </Grid>
-                  <Grid item xs={12} sm={5}>
-                    <Button
-                      fullWidth
-                      className={classes.btn}
-                      type="submit"
-                    >
-                      JOIN OUR WAITLIST
+                  <Grid container spacing={1} alignItems="center" data-aos="fade-up">
+                    <Grid item xs={12} sm={7}>
+                      <TextField
+                      className={classes.emailField}
+                    placeholder="Enter your email"
+                    variant="outlined"
+                    size="small"
+                    name="email"
+                    fullWidth
+                    type="email"
+                    onChange={handleEmailValidation}
+                  />
+                  
+                    </Grid>
+                    <Grid item xs={12} sm={5}>
+                      <Button
+                        className={classes.btn}
+                        size="small"
+                      >
+                        JOIN OUR WAITLIST
                         </Button>
                   </Grid>
                 </Grid>

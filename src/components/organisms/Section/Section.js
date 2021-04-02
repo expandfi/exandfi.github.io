@@ -28,7 +28,7 @@ const useStyles = makeStyles(theme => ({
   gradient: {
     background: 'linear-gradient(180deg, #97B8FF 0%, rgba(255, 255, 255, 0) 100%)',
     marginTop: '-30vh',
-    paddingTop: '35vh',
+    paddingTop: '25vh',
     paddingBottom: 0
   }
 }));

@@ -68,7 +68,7 @@ const Features = props => {
                     size="extraSmall"
                     fontIconClass="fas fa-check"
                     color={colors.yellow}
-                    className={classes.icon}
+                    shape='circle'
                   />
                 </ListItemAvatar>
                 <ListItemText className={classes.listItemText} primary={item} />
