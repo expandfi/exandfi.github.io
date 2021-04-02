@@ -118,7 +118,7 @@ const Hero = props => {
       }
     }
 
-    console.log(email);
+    //console.log(email);
   }
 
   function handleSubmit(event) {
@@ -131,7 +131,7 @@ const Hero = props => {
         'Content-Type': 'application/json',
       }
     }
-    axios.post('https://sheet.best/api/sheets/966ef6cc-b584-4515-8f7f-48ab10f3cfd4', {Email:email}, config)
+    axios.post('https://sheet.best/api/sheets/966ef6cc-b584-4515-8f7f-48ab10f3cfd4', {Email: email}, config)
       .then(response => {
         console.log(response);
       })
@@ -185,7 +185,7 @@ const Hero = props => {
               align="left"
               data-aos="fade-up"
             />
-
+``
             <Grid>
               <form onSubmit={handleSubmit}>
                 <Typography
