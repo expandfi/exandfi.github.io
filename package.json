@@ -58,6 +58,7 @@
     "react-typed": "^1.2.0",
     "react-visibility-sensor": "^5.1.1",
     "start": "^5.1.0",
+    "sweetalert-react": "^0.4.11",
     "swiper": "^5.4.1",
     "validate.js": "^0.13.1"
   },

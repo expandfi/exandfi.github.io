@@ -11,6 +11,7 @@ import {
 
 } from '@material-ui/core';
 import { Image } from 'components/atoms';
+import  ModularModal  from '../../../../views/ExpandfiHome/components/ModularModal';
 
 const useStyles = makeStyles(theme => ({
   toolbar: {
@@ -85,7 +86,7 @@ const nav = [
   
 ]
 
-const Topbar = ({ themeMode, className, ...rest }) => {
+const Topbar = ({ openModal, themeMode, className, ...rest }) => {
   const classes = useStyles();
 
   return (
@@ -113,6 +114,7 @@ const Topbar = ({ themeMode, className, ...rest }) => {
       <Button
         className={classes.btn}
         size="small"
+        onClick={openModal}
         >
         SIGN UP
         </Button>
