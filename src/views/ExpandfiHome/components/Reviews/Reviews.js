@@ -36,6 +36,14 @@ const useStyles = makeStyles(theme => ({
   gridItem: {
     height: '100%',
   },
+  altTitle: {
+    fontFamily: 'Lato',
+    fontWeight: '900',
+    fontSize: '32px',
+    lineHeight: '40px',
+    color: 'white',
+    marginBottom: '4rem',
+  }
 }));
 
 const Reviews = props => {
@@ -49,10 +57,11 @@ const Reviews = props => {
 
   return (
     <div className={className} {...rest}>
-      <SectionHeader
-        title={"What our clients say"}
-        data-aos="fade-up"
-      />
+    <Grid data-aos="fade-up">
+      <Typography align='center' className={classes.altTitle}>
+        What our clients say
+      </Typography>
+    </Grid>
       <Grid container spacing={4}>
         {data.map((item, index) => (
           <Grid item xs={12} md={4} key={index} className={classes.gridItem}>

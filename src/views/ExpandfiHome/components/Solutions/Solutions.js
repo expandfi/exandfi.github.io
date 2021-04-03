@@ -47,7 +47,6 @@ const Solutions = props => {
                 titleVariant="h5"
                 title={item.title}
                 subtitle={item.description}
-                ctaGroup={[<LearnMoreLink title="Learn more" variant="h6" />]}
                 align="left"
                 disableGutter
               />
