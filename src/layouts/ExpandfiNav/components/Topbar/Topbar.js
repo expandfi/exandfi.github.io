@@ -65,23 +65,23 @@ const useStyles = makeStyles(theme => ({
 const nav = [
   {
     title:'Features',
-    anchor:'#'
+    anchor:'#features'
   },
   {
     title:'How It Works',
-    anchor:'#'
+    anchor:'#howItWorks'
   },
   {
     title:'Testimonials',
-    anchor:'#'
+    anchor:'#testimonials'
   },
   {
     title:'Pricing',
-    anchor:'#'
+    anchor:'#pricing'
   },
   {
     title:'FAQ',
-    anchor:'#'
+    anchor:'/faq'
   },
   
 ]
@@ -105,9 +105,11 @@ const Topbar = ({ openModal, themeMode, className, ...rest }) => {
       <List className={classes.navigationContainer}>
       {nav.map((link)=> (
         <ListItem className={classes.listItem}>
+        <a href={link.anchor}>
           <Typography noWrap>
             {link.title}
           </Typography>
+          </a>
         </ListItem>
       ))}
       </List>

@@ -12,14 +12,22 @@ import axios from "axios";
 
 const useStyles = makeStyles(theme => ({
   root: {
-    background: theme.palette.primary.dark,
-    paddingTop: theme.spacing(3),
+    // background: theme.palette.primary.dark,
+    backgroundImage: `url('./assets/hero-bg-image.png')`,
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: '100% 100%',
+    paddingTop: theme.spacing(5),
+    paddingBottom: theme.spacing(5),
     [theme.breakpoints.up('md')]: {
-      paddingTop: theme.spacing(5),
+      paddingTop: theme.spacing(8),
+      paddingBottom: theme.spacing(4),
     },
+    minHeight: 490,
     width: '100%',
     height: '100%',
     overflow: 'hidden',
+    zIndex: '10',
+    position: 'relative'
   },
   hero: {
     display: 'flex',
@@ -29,7 +37,6 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.up('md')]: {
       flexDirection: 'row',
     },
-    backgroundImage: `url('./assets/hero-bg-image.png')`
   },
   section: {
     paddingTop: 0,
@@ -38,7 +45,7 @@ const useStyles = makeStyles(theme => ({
   sectionHeader: {
     padding: theme.spacing(0, 2),
     [theme.breakpoints.up('md')]: {
-      maxWidth: '50%',
+      maxWidth: '60%',
       width: 'calc(100vw - 625px)',
     },
   },
@@ -48,25 +55,38 @@ const useStyles = makeStyles(theme => ({
   text1: {
     color: 'white',
     fontWeight: 600,
+    fontSize: '1.8rem',
+    marginBottom: '1rem'
   },
   text2: {
     color: 'white',
     fontWeight: 900,
+    fontSize: '3rem'
+
   },
   text25: {
     color: '#2BFFD8',
     fontWeight: 900,
+    fontSize: '3rem',
   },
   text3: {
     fontSize: '1.3rem',
     color: 'white',
     fontWeight: 600,
+    marginTop: '1.3rem',
+    marginBottom: '3rem'
+  },
+  text35: {
+    fontSize: '1.3rem',
+    color: 'white',
+    fontWeight: 600,
+    marginTop: '1rem',
     marginBottom: '1rem'
   },
   text4: {
-    fontSize: '1rem',
+    fontSize: '.9rem',
     color: 'white',
-    fontWeight: 600,
+    fontWeight: 400,
     marginTop: '1rem'
   },
   emailField: {
@@ -150,7 +170,6 @@ const Hero = props => {
   const title = (
     <Typography variant="h2" component="span" className={classes.text2}>
       Expand your
-      <br />
       <TypedText
         component="span"
         variant="h2"
@@ -158,13 +177,13 @@ const Hero = props => {
         className={classes.text25}
         typedProps={{
           strings: [
-            'reach',
-            'channels',
-            'relevance',
-            'data',
-            'sales',
-            'profits',
-            'value',
+            ' reach',
+            ' channels',
+            ' relevance',
+            ' data',
+            ' sales',
+            ' profits',
+            ' value',
           ],
           typeSpeed: 50,
           loop: true,
@@ -179,23 +198,16 @@ const Hero = props => {
       <div className={classes.hero}>
         <Section className={classes.section}>
           <div className={classes.sectionHeader}>
+            <Grid data-aos="fade-up">
             <Typography variant="h4" gutterBottom className={classes.text1}>
               Own your customer
             </Typography>
-            <SectionHeader
-              titleVariant="h3"
-              title={title}
-              subtitle={
-                <span className={classes.text3}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                  incididunt ut labore et dolore magna aliqua.
-                </span>
-              }
-              align="left"
-              data-aos="fade-up"
-            />
-            <Grid>
+              {title}
               <Typography className={classes.text3}>
+                We make it easy to centralize, understand, enrich, and reach your customers - so that you can focus on omnichannel growth. 
+              </Typography>
+            
+              <Typography className={classes.text35}>
                 Get started today
                 </Typography>
 
@@ -237,7 +249,7 @@ const Hero = props => {
                 color="textPrimary"
                 className={classes.text4}
               >
-                Lorem ipsum dolor sit amet, consectetur adioiscing elit, sed do.
+                *By entering your information, you agree to our Terms & Conditions, Privacy Policy and to receive marketing communications from ExpandFi.
                   </Typography>
             </Grid>
           </div>
@@ -249,7 +261,7 @@ const Hero = props => {
           lazy={false}
         />
       </div>
-    </div >
+    </div>
   );
 };
 

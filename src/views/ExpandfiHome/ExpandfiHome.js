@@ -36,7 +36,7 @@ const ExpandfiHome = ({ open, setOpen, themeMode }) => {
             <AboutTop title={about[0].title} body={about[0].body} img={about[0].img} alt={about[0].title}/>
           </Section>
           <Section >
-              <Features data={features} />
+              <Features data={features} id='features'/>
           </Section>
           <Section >
             <AboutTop title={about[1].title} body={about[1].body} img={about[1].img} alt={about[1].title}/>
@@ -47,18 +47,18 @@ const ExpandfiHome = ({ open, setOpen, themeMode }) => {
         </Section>
 
         <SectionAlternate image="url('./assets/categoriesBG.png')" className={classes.sectionNoPaddingTop}>
-            <Categories data={categories} />
+            <Categories data={categories} id='howItWorks' />
         </SectionAlternate>
 
         <Section>
             <Solutions data={solutions} />
         </Section>
 
-        <SectionAlternate image="url('./assets/testimonialBG.png')" className={classes.reviewSection}>
+        <SectionAlternate image="url('./assets/testimonialBG.png')" className={classes.reviewSection} id='testimonials' >
             <Reviews data={reviews} />
         </SectionAlternate>
 
-        <Section>
+        <Section id='pricing'>
             <Pricings />
         </Section>
 
@@ -66,6 +66,7 @@ const ExpandfiHome = ({ open, setOpen, themeMode }) => {
             <Grid item xs={12}>
             <SectionHeader
                 title="Grow your business with ExpandFi"
+                subtitleColor='white'
                 subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
                 align="center"
                 ctaGroup={[

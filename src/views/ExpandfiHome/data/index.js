@@ -2,13 +2,13 @@ import { colors } from '@material-ui/core';
 
 export const about = [
   {
-    title: "Secure your Amazon customers",
-    body: "Loading your customers into ExpandFi secures them from Amazon. Plus with the largest database of Amazon customers, we can match name and address even without Amazon providing it.",
+    title: "Centralize your customers across multiple channels",
+    body: "ExpandFi integrates with Shopify and Amazon so you can manage all of your customers in a single platform. ",
     img: "./assets/aboutTop1.png"
   },
   {
     title: "Enrich your customer data",
-    body: "ExpandFi makes it easy to enirch your customer data with Email Appends, Phone Appends, and Demographic Data. Plus with the highest match rate in the industry, you're getting the best data out there.",
+    body: "ExpandFi makes it easy to enrich your customer data with Demographic Data, Validated Email Appends, Phone Appends (DNC & TCPA compliant), and more. Plus with the highest match rate in the industry  (up to 70%), you're getting the best data out there.",
     img: "./assets/aboutTop2.png"
   }
 ]
@@ -73,56 +73,6 @@ export const categories = [
   },
 ];
 
-export const faq = [
-  {
-    id: 'faq-1',
-    title: 'Flexible access to facilities.',
-    subtitle: 'Our new key fobs make it so easy!',
-    text:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt rerum minima a possimus, amet perferendis, temporibus obcaecati pariatur.',
-    link: 'Check it out',
-  },
-  {
-    id: 'faq-2',
-    title: 'Snacks, drinks, coffee, and more.',
-    subtitle: 'Our new key fobs make it so easy!',
-    text:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt rerum minima a possimus, amet perferendis, temporibus obcaecati pariatur.',
-    link: 'Check it out',
-  },
-  {
-    id: 'faq-3',
-    title: 'On site tech support.',
-    subtitle: 'Our new key fobs make it so easy!',
-    text:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt rerum minima a possimus, amet perferendis, temporibus obcaecati pariatur.',
-    link: 'Check it out',
-  },
-  {
-    id: 'faq-4',
-    title: 'Flexible access to facilities.',
-    subtitle: 'Our new key fobs make it so easy!',
-    text:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt rerum minima a possimus, amet perferendis, temporibus obcaecati pariatur.',
-    link: 'Check it out',
-  },
-  {
-    id: 'faq-5',
-    title: 'Snacks, drinks, coffee, and more.',
-    subtitle: 'Our new key fobs make it so easy!',
-    text:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt rerum minima a possimus, amet perferendis, temporibus obcaecati pariatur.',
-    link: 'Check it out',
-  },
-  {
-    id: 'faq-6',
-    title: 'On site tech support.',
-    subtitle: 'Our new key fobs make it so easy!',
-    text:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt rerum minima a possimus, amet perferendis, temporibus obcaecati pariatur.',
-    link: 'Check it out',
-  },
-];
 
 export const features = [
   'Lifetime Value (LTV)',
@@ -135,7 +85,7 @@ export const solutions = [
   {
     title: 'Advocating for the success of business owners',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      'We believe that small businesses are the backbone of the retail giants. Our mission is to help those small businesses take control of their customers - thus letting them take control of their destinies. ',
     illustration: './assets/pexels-fauxels-3184465 1.png',
   },
 ];
@@ -180,7 +130,7 @@ export const reviews = [
     authorName: 'Jane Goodman',
     authorOccupation: 'Founder, ImpactNation',
     feedback:
-      'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+      'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit.',
   },
   {
     authorPhoto: {
