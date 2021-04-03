@@ -16,7 +16,7 @@
  
  ## Demo
  
- ![Fitness Tracker](https://user-images.githubusercontent.com/71421032/108661560-f0d41980-7480-11eb-8db7-db51f2b6dd0c.gif)
+ <img width="1732" alt="Screen Shot 2021-04-02 at 7 52 37 PM" src="https://user-images.githubusercontent.com/71421032/113465984-fbbd8a80-93ec-11eb-9243-0b7ea8e22ea9.png">
 
   ## Installation
   You will need to install the following repository in order to use: https://github.com/alxndrnevermando/workout-tracker.git
