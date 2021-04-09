@@ -18,8 +18,11 @@ const useStyles = makeStyles(theme => ({
   },
   logoImage: {
       margin: 'auto',
-      padding: '20px'
+      padding: '40px',
     },
+  logoSection: {
+      marginBottom: '3rem'
+  }
 }));
 
 const Integrations = props => {
@@ -35,10 +38,10 @@ const Integrations = props => {
     <div className={className} {...rest}>
       <SectionHeader
         title={"Expand your reach"}
-        subtitle={"Easily create Facebook custom audiences, import reviews into Shopify, export emails into Klaviyo and more. We integrate with some of the most well-known platforms."}
+        subtitle={"Easily create Facebook custom audiences, import/export reviews into Shopify, export emails into Klaviyo and more. We integrate with some of the most well-known platforms."}
         data-aos="fade-up"
       />
-      <Grid container spacing={isMd ? 4 : 1}>
+      <Grid className={classes.logoSection} container spacing={isMd ? 4 : 1}>
         {data.map((item, index) => (
           <Grid
             className={classes.logoImage}

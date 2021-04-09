@@ -13,6 +13,20 @@ const useStyles = makeStyles(theme => ({
   featureCheck: {
     marginRight: theme.spacing(1),
   },
+  cardHead: {
+    height: '6.5rem',
+    marginTop: '-1rem'
+  },
+  cardTitle: {
+    fontWeight: '600'
+  },
+  cardListItem: {
+    lineHeight: '2rem',
+    paddingTop: '4px'
+  },
+  listItemIcon: {
+    paddingTop: '8px'
+  }
 }));
 
 /**
@@ -46,11 +60,11 @@ const CardPricingStandard = props => {
       {...rest}
     >
       <Grid container spacing={2} className="card-pricing-standard__wrapper">
-        <Grid item xs={12} className="card-pricing-standard__headline">
+        <Grid item xs={12} className={clsx("card-pricing-standard__headline", classes.cardHead)}>
           <Typography
             variant="h5"
             gutterBottom
-            className="card-pricing-standard__title"
+            className={clsx("card-pricing-standard__title", classes.cardTitle)}
             {...titleProps}
           >
             {title}
@@ -77,15 +91,17 @@ const CardPricingStandard = props => {
             <List className="card-pricing-standard__feature-list">
               {features.map((item, index) => (
                 <ListItem
+                  alignItems='flex-start'
                   key={index}
                   disableGutters
-                  className="card-pricing-standard__feature-list-item"
+                  className={clsx("card-pricing-standard__feature-list-item")}
                 >
                   {featureCheckComponent && (
                     <div
                       className={clsx(
                         'card-pricing-standard__feature-check',
                         classes.featureCheck,
+                        classes.listItemIcon
                       )}
                     >
                       {featureCheckComponent}

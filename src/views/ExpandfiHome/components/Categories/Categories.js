@@ -44,7 +44,7 @@ const Categories = props => {
       </Typography>
       <Grid container spacing={6}>
         {data.map((item, index) => (
-          <Grid item xs={6} md={3} key={index} data-aos="fade-up">
+          <Grid item xs={12} sm={6} md={3} key={index} data-aos="fade-up">
             <CardBase noBorder noShadow liftUp className={classes.cardBase}>
             <DescriptionListIcon
               title={item.title}

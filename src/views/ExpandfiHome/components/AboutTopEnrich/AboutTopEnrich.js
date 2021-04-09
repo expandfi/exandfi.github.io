@@ -24,27 +24,21 @@ const useStyles = makeStyles(theme => ({
     lineHeight: '28px',
     fontSize:'20px'
   },
-  btn: {
-      background: '#AA2CFF',
-      color: 'white',
-      fontSize: '1rem',
-      fontWeight: '600',
-      padding: '10px',
-      '&:disabled': {
-        background: '#AA2CFF',
-        color: 'white',
-        fontSize: '1rem',
-        fontWeight: '600',
-        padding: '10px'
-      },
-      '&:hover': {
-        background: 'white',
-        color: '#AA2CFF'
-      }
+   btn: {
+    background: '#AA2CFF',
+    color: 'white',
+    fontSize: '1rem',
+    fontWeight: '600',
+    padding: '10px 25px 10px 25px',
+    marginTop: '2rem',
+    '&:hover': {
+      background: '#951BE8',
+      color: 'white'
+    }
   },
 }));
 
-const AboutTop = props => {
+const AboutTopEnrich = props => {
   const { className, ...rest } = props;
   const classes = useStyles();
 
@@ -86,6 +80,7 @@ const AboutTop = props => {
             <Typography className={classes.aboutBody}align="left">
               {props.body}
             </Typography>
+            <Button className={classes.btn} >SIGN UP FOR EXPANDFI</Button>
 
 
           </div>
@@ -95,11 +90,11 @@ const AboutTop = props => {
   );
 };
 
-AboutTop.propTypes = {
+AboutTopEnrich.propTypes = {
   /**
    * External classes
    */
   className: PropTypes.string,
 };
 
-export default AboutTop;
+export default AboutTopEnrich;

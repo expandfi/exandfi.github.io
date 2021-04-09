@@ -2,7 +2,7 @@ import React from 'react';
 import { makeStyles,Button, Grid } from '@material-ui/core';
 import { Section, SectionAlternate } from 'components/organisms';
 import { SectionHeader } from 'components/molecules';
-import { Hero, AboutTop, Features, Integrations, Pricings, Categories, Solutions, Reviews, } from './components';
+import { Hero, AboutTop, AboutTopEnrich, Features, Integrations, Pricings, Categories, Solutions, Reviews, BottomCTA } from './components';
 import {
     about,
     categories,
@@ -22,6 +22,17 @@ const useStyles = makeStyles(() => ({
     paddingTop: 0,
     paddingBottom: 0,
   },
+  toTopDiv: {
+    height: '0px',
+    textAlign: 'right',
+    marginRight: '30px'
+  },
+  toTop: {
+    padding: '10px 20px 10px 20px',
+    marginTop: '-5rem',
+    color: 'white',
+    fontWeight: 900
+  }
 }));
 
 const ExpandfiHome = ({ open, setOpen, themeMode }) => {
@@ -35,13 +46,16 @@ const ExpandfiHome = ({ open, setOpen, themeMode }) => {
           <Section >
             <AboutTop title={about[0].title} body={about[0].body} img={about[0].img} alt={about[0].title}/>
           </Section>
+
           <Section >
               <Features data={features} id='features'/>
           </Section>
+
           <Section >
-            <AboutTop title={about[1].title} body={about[1].body} img={about[1].img} alt={about[1].title}/>
+            <AboutTopEnrich title={about[1].title} body={about[1].body} img={about[1].img} alt={about[1].title} />
           </Section>
-          <Section >
+
+          <Section>
             <Integrations data={integrations} />
           </Section>
         </Section>
@@ -63,25 +77,14 @@ const ExpandfiHome = ({ open, setOpen, themeMode }) => {
         </Section>
 
         <SectionAlternate>
-            <Grid item xs={12}>
-            <SectionHeader
-                title="Grow your business with ExpandFi"
-                subtitleColor='white'
-                subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                align="center"
-                ctaGroup={[
-                <Button color="primary" variant="contained" size="large" onClick={() => setOpen(true)}>
-                    Get Started
-                </Button>,
-                ]}
-                disableGutter
-                data-aos="fade-up"
-            />
-            </Grid>
+           <BottomCTA />
         </SectionAlternate>
-        <Button className={classes.toTop}>
-              Back to the top
+        <div className={classes.toTopDiv} >
+          <Button className={classes.toTop}>
+            Back to the top ⬆
         </Button>
+        </div>
+
 
     </div>
   );

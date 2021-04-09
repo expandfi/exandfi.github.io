@@ -44,29 +44,29 @@ export const advantages = [
 
 export const categories = [
   {
-    title: 'Lorem ipsum dolor sit amet',
-    subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',
+    title: 'Download & upload reports',
+    subtitle: 'To secure your data we are “Off the Grid” for some platforms and integrated via API with others.',
     icon: {
       src: './assets/icon1.png'
     },
   },
   {
-    title: 'Lorem ipsum dolor sit amet',
-    subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',
+    title: 'Learn about your customers',
+    subtitle: 'With beautiful visualizations, we make it easy to understand key data about your customers.',
     icon: {
       src: './assets/icon2.png'
     },
   },
   {
-    title: 'Lorem ipsum dolor sit amet',
-    subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',
+    title: 'Enrich your customers',
+    subtitle: 'Choose to purchase additional data about your customers so that you can reach them in more places.',
     icon: {
       src: './assets/icon3.png'
     },
   },
   {
-    title: 'Lorem ipsum dolor sit amet',
-    subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',
+    title: 'Expand your reach',
+    subtitle: 'Leverage everything you now know about your customers to grow your business across multiple channels.',
     icon: {
       src: './assets/icon4.png'
     },

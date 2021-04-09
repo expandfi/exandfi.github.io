@@ -100,8 +100,21 @@ const useStyles = makeStyles(theme => ({
     color: 'white',
     fontSize: '1rem',
     fontWeight: '600',
-    padding: '10px'
+    padding: '10px',
+    '&:disabled': {
+      background: '#AA2CFF',
+      color: 'white',
+      fontSize: '1rem',
+      fontWeight: '600',
+      padding: '10px'
+    },
+    '&:hover': {
+      background: '#951BE8',
+      color: 'white'
+    }
   },
+
+
   image: {
     alignSelf: 'flex-end',
     maxWidth: 625,

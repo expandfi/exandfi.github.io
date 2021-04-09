@@ -55,7 +55,7 @@ const Features = props => {
         <Grid item xs={12} md={6}>
           <SectionHeader
             title="Understand your customers"
-            subtitle="ExpandFi provides you with a detailed analysis of your customers including"
+            subtitle="ExpandFi provides you with a detailed analysis of your customers including:"
             align="left"
             disableGutter
             data-aos="fade-up"

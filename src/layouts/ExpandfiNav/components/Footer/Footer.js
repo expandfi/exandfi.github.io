@@ -22,7 +22,7 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.up('md')]: {
       padding: theme.spacing(12, 0),
     },
-    background: theme.palette.background.footer,
+    background: '#F5F7FF',
   },
   footerContainer: {
     maxWidth: theme.layout.contentWidth,
@@ -84,7 +84,7 @@ const useStyles = makeStyles(theme => ({
   },
   menuGroupTitle: {
     textTransform: 'uppercase',
-    color: 'white',
+    color: '#121037',
   },
   divider: {
     width: '100%',
@@ -124,16 +124,16 @@ const Footer = props => {
 
               <ListItem disableGutters>
                 <IconButton className={classes.socialIcon}>
-                  <FacebookIcon className={classes.icon} />
+                  <FacebookIcon color='primary' className={classes.icon} />
                 </IconButton>
                 <IconButton className={classes.socialIcon}>
-                  <InstagramIcon className={classes.icon} />
+                  <InstagramIcon color='primary' className={classes.icon} />
                 </IconButton>
                 <IconButton className={classes.socialIcon}>
-                  <TwitterIcon className={classes.icon} />
+                  <TwitterIcon color='primary' className={classes.icon} />
                 </IconButton>
                 <IconButton className={classes.socialIcon}>
-                  <PinterestIcon className={classes.icon} />
+                  <PinterestIcon color='primary' className={classes.icon} />
                 </IconButton>
               </ListItem>
             </List>
