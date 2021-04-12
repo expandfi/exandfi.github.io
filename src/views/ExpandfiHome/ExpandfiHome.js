@@ -73,7 +73,7 @@ const ExpandfiHome = ({ open, setOpen, themeMode }) => {
         </SectionAlternate>
 
         <Section id='pricing'>
-            <Pricings />
+            <Pricings setOpen={setOpen} />
         </Section>
 
         <SectionAlternate>
