@@ -25,6 +25,24 @@ const useStyles = makeStyles((theme) => ({
         boxShadow: theme.shadows[5],
         padding: theme.spacing(2, 4, 3),
     },
+    btn: {
+        background: '#AA2CFF',
+        color: 'white',
+        fontSize: '1rem',
+        fontWeight: '600',
+        padding: '10px',
+        '&:disabled': {
+          background: '#AA2CFF',
+          color: 'white',
+          fontSize: '1rem',
+          fontWeight: '600',
+          padding: '10px'
+        },
+        '&:hover': {
+          background: '#951BE8',
+          color: 'white'
+        }
+      },
 }));
 
 
@@ -92,14 +110,14 @@ const ModularModal = props => {
 
     const body = (
         <div style={modalStyle} className={classes.paper}>
-            <h2 id="simple-modal-title">Join Our Waitlist</h2>
+            <h2 id="simple-modal-title">Join our waitlist</h2>
             <p id="simple-modal-description">
-                Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-          </p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.
+            </p>
             <form onSubmit={handleSubmit}>
                 <TextField
                     className={classes.emailField}
-                    placeholder="Enter your email"
+                    placeholder="Enter Email Address"
                     variant="outlined"
                     size="small"
                     name="email"
@@ -108,6 +126,9 @@ const ModularModal = props => {
                     value={email}
                     onChange={handleEmailValidation}
                 />
+                <Typography variant='caption' >
+                    By clicking “Submit Now” you agree to the ExpandFi Terms of Service and Privacy Policy.
+                </Typography>
                 <Button
                     fullWidth
                     className={classes.btn}
