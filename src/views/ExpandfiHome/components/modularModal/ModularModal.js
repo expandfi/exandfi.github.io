@@ -27,7 +27,6 @@ const useStyles = makeStyles((theme) => ({
         boxShadow: theme.shadows[5],
         padding: theme.spacing(2, 4, 3),
     },
-<<<<<<< HEAD
     btn: {
         background: '#AA2CFF',
         color: 'white',
@@ -46,7 +45,6 @@ const useStyles = makeStyles((theme) => ({
           color: 'white'
         }
       },
-=======
     customizedButton: {
         position: 'absolute',
         left: '95%',
@@ -54,7 +52,6 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: 'lightgray',
         color: 'gray',
       }
->>>>>>> 8b78fee808974f166be6d9b96c480c14dbaf6809
 }));
 
 
