@@ -4,6 +4,8 @@ import { Modal, TextField, Button, Typography } from '@material-ui/core';
 import SweetAlert from 'sweetalert-react';
 import "../../../../../node_modules/sweetalert/dist/sweetalert.css";
 import axios from "axios";
+import IconButton from '@material-ui/core/IconButton';
+import Close from '@material-ui/icons/Close';
 
 function getModalStyle() {
     const top = 50;
@@ -25,6 +27,7 @@ const useStyles = makeStyles((theme) => ({
         boxShadow: theme.shadows[5],
         padding: theme.spacing(2, 4, 3),
     },
+<<<<<<< HEAD
     btn: {
         background: '#AA2CFF',
         color: 'white',
@@ -43,6 +46,15 @@ const useStyles = makeStyles((theme) => ({
           color: 'white'
         }
       },
+=======
+    customizedButton: {
+        position: 'absolute',
+        left: '95%',
+        top: '-9%',
+        backgroundColor: 'lightgray',
+        color: 'gray',
+      }
+>>>>>>> 8b78fee808974f166be6d9b96c480c14dbaf6809
 }));
 
 
@@ -109,11 +121,17 @@ const ModularModal = props => {
     }
 
     const body = (
+        <>
+        
         <div style={modalStyle} className={classes.paper}>
-            <h2 id="simple-modal-title">Join our waitlist</h2>
+                <IconButton className={classes.customizedButton} onClick={handleClose}>
+                    <Close />
+                </IconButton>
+            <h2 id="simple-modal-title">Join Our Waitlist</h2>
             <p id="simple-modal-description">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.
-            </p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.
+          </p>
+          
             <form onSubmit={handleSubmit}>
                 <TextField
                     className={classes.emailField}
@@ -142,24 +160,25 @@ const ModularModal = props => {
             </form>
             {error}
         </div>
+        </>
     );
 
     return (
         <>
-        <Modal
-            open={props.open}
-            onClose={handleClose}
-            aria-labelledby="simple-modal-title"
-            aria-describedby="simple-modal-description"
-        >
-            {body}
-        </Modal>
-        <SweetAlert 
-        show={show}
-        type="success"
-        title="You're on the list!"
-        onConfirm={() => setShow(false)}
-        />
+            <Modal
+                open={props.open}
+                onClose={handleClose}
+                aria-labelledby="simple-modal-title"
+                aria-describedby="simple-modal-description"
+            >
+                {body}
+            </Modal>
+            <SweetAlert
+                show={show}
+                type="success"
+                title="You're on the list!"
+                onConfirm={() => setShow(false)}
+            />
         </>
     )
 };
