@@ -52,7 +52,7 @@ const BottomCTA = props => {
         <Typography className={classes.subtitle} >
           Easily create Facebook custom audiences, import/export reviews into Shopify, export emails into Klaviyo and more. We integrate with some of the most well-known platforms.
         </Typography>
-        <Button className={classes.btn}>
+        <Button className={classes.btn} onClick={() => props.setOpen(true)}>
           JOIN OUR WAITLIST
         </Button>
       </div>

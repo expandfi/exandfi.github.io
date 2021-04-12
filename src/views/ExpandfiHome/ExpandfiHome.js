@@ -52,7 +52,7 @@ const ExpandfiHome = ({ open, setOpen, themeMode }) => {
           </Section>
 
           <Section >
-            <AboutTopEnrich title={about[1].title} body={about[1].body} img={about[1].img} alt={about[1].title} />
+            <AboutTopEnrich title={about[1].title} body={about[1].body} img={about[1].img} alt={about[1].title} setOpen={setOpen}/>
           </Section>
 
           <Section>
@@ -77,7 +77,7 @@ const ExpandfiHome = ({ open, setOpen, themeMode }) => {
         </Section>
 
         <SectionAlternate>
-           <BottomCTA />
+           <BottomCTA setOpen={setOpen}/>
         </SectionAlternate>
         <div className={classes.toTopDiv} >
           <Button className={classes.toTop}>
