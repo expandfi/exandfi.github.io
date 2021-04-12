@@ -88,8 +88,10 @@ const nav = [
 
 const Topbar = ({ openModal, themeMode, className, ...rest }) => {
   const classes = useStyles();
+  const [open, setOpen] = React.useState(false);
 
   return (
+    <>
     <Toolbar className={clsx(classes.toolbar, className)} {...rest}>
       <div>
         <a href="/" title="ExpandFi">
@@ -116,11 +118,13 @@ const Topbar = ({ openModal, themeMode, className, ...rest }) => {
       <Button
         className={classes.btn}
         size="small"
-        onClick={openModal}
+        onClick={() => setOpen(true)}
         >
         SIGN UP
         </Button>
     </Toolbar>
+    <ModularModal open={open} setOpen={setOpen}/>
+    </>
   );
 };
 
