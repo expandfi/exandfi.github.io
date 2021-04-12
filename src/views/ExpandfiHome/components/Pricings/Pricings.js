@@ -98,6 +98,7 @@ const Pricings = props => {
                 variant="outlined"
                 fullWidth
                 size="large"
+                onClick={() => props.setOpen(true)}
               >
                 CHOOSE START-UP
               </Button>
@@ -141,7 +142,7 @@ const Pricings = props => {
               />
             }
             cta={
-              <Button className={classes.btnMain} variant="contained" fullWidth size="large">
+              <Button className={classes.btnMain} variant="contained" fullWidth size="large" onClick={() => props.setOpen(true)}>
                 CHOOSE GROWTH
               </Button>
             }
@@ -183,7 +184,7 @@ const Pricings = props => {
               />
             }
             cta={
-              <Button className={classes.btnAlt} variant="outlined" fullWidth size="large">
+              <Button className={classes.btnAlt} variant="outlined" fullWidth size="large" onClick={() => props.setOpen(true)}>
                CHOOSE PRO
               </Button>
             }
