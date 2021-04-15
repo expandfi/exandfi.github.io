@@ -162,21 +162,19 @@ const Hero = props => {
     // console.log(email);
   }
 
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbyBimTtxeLuTI8DOKTcYlTrIwrhQmLNe3_7AvvZy147EAbfXF75j0-1laaN5GcLnGJJ/exec'
+  const form = document.forms['submit-to-google-sheet']
+
+
   function handleSubmit(event) {
     event.preventDefault();
-    console.log('Email:', email);
-    // You should see email and password in console.
-    // ..code to submit form to backend here...
-    let config = {
-      headers: {
-        'Content-Type': 'application/json',
-      }
-    }
-    axios.post('https://sheet.best/api/sheets/966ef6cc-b584-4515-8f7f-48ab10f3cfd4', { Email: email }, config)
-      .then(response => {
-        console.log(response);
+
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+    .then(response => {
+        console.log('Success!', response);
         setShow(true);
-      })
+    })
+    .catch(error => console.error('Error!', error.message))      
 
   }
 
@@ -226,25 +224,28 @@ const Hero = props => {
 
               <Grid container spacing={1} alignItems="center" data-aos="fade-up">
                 <Grid item xs={12} sm={7}>
+                <form onSubmit={handleSubmit} name="submit-to-google-sheet">
                   <TextField
-                    className={classes.emailField}
-                    placeholder="Enter your email"
-                    variant="outlined"
-                    size="small"
-                    name="email"
-                    fullWidth
-                    type="email"
-                    onChange={handleEmailValidation}
+                            className={classes.emailField}
+                            placeholder="Enter Email Address"
+                            variant="outlined"
+                            size="small"
+                            name="email"
+                            fullWidth
+                            type="email"
+                            value={email}
+                            onChange={handleEmailValidation}
                   />
+                  </form>
                 </Grid>
                 <Grid item xs={12} sm={5}>
                   <Button
-                    fullWidth
-                    className={classes.btn}
-                    size="small"
-                    disabled={disable}
-                    // onClick={handleOpen}
-                    onClick={handleSubmit}
+                            fullWidth
+                            className={classes.btn}
+                            size="small"
+                            disabled={disable}
+                            onClick={handleSubmit}
+                            type="submit"
                   >
                     JOIN OUR WAITLIST
                   </Button>

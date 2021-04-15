@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Modal, TextField, Button, Typography } from '@material-ui/core';
+import { Modal, TextField, Button, Typography, Grid } from '@material-ui/core';
 import SweetAlert from 'sweetalert-react';
 import "../../../../../node_modules/sweetalert/dist/sweetalert.css";
 import axios from "axios";
@@ -21,11 +21,12 @@ function getModalStyle() {
 const useStyles = makeStyles((theme) => ({
     paper: {
         position: 'absolute',
-        width: 500,
+        width: 600,
         backgroundColor: theme.palette.background.paper,
         borderRadius: '10px',
         boxShadow: theme.shadows[5],
-        padding: theme.spacing(2, 4, 3),
+        padding: '10px 50px 50px 50px'
+        // padding: theme.spacing(2, 4, 3),
     },
     btn: {
         background: '#AA2CFF',
@@ -46,12 +47,15 @@ const useStyles = makeStyles((theme) => ({
         }
       },
     customizedButton: {
-        position: 'absolute',
-        left: '95%',
-        top: '-9%',
-        backgroundColor: 'lightgray',
+        display: 'flex',
         color: 'gray',
-      }
+      },
+    modalBody: {
+        textAlign: 'center'
+    },
+    modalTitle: {
+        fontSize: '32px'
+    },
 }));
 
 
@@ -98,22 +102,36 @@ const ModularModal = props => {
         props.setOpen(false);
     };
 
+    
+
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyBimTtxeLuTI8DOKTcYlTrIwrhQmLNe3_7AvvZy147EAbfXF75j0-1laaN5GcLnGJJ/exec'
+    const form = document.forms['submit-to-google-sheet']
+
     function handleSubmit(event) {
         event.preventDefault();
-        console.log('Email:', email);
-        // You should see email and password in console.
-        // ..code to submit form to backend here...
-        let config = {
-            headers: {
-                'Content-Type': 'application/json',
-            }
-        }
-        axios.post('https://sheet.best/api/sheets/966ef6cc-b584-4515-8f7f-48ab10f3cfd4', { Email: email }, config)
-            .then(response => {
-                console.log(response);
-                setShow(true);
-                handleClose();
-            })
+
+        // console.log('Email:', email);
+        // // You should see email and password in console.
+        // // ..code to submit form to backend here...
+        // let config = {
+        //     headers: {
+        //         'Content-Type': 'application/json',
+        //     }
+        // }
+        // axios.post('https://sheet.best/api/sheets/966ef6cc-b584-4515-8f7f-48ab10f3cfd4', { Email: email }, config)
+        //     .then(response => {
+        //         console.log(response);
+        //         setShow(true);
+        //         handleClose();
+        //     })
+
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            console.log('Success!', response);
+            setShow(true);
+            handleClose();
+        })
+        .catch(error => console.error('Error!', error.message))        
 
     }
 
@@ -121,41 +139,47 @@ const ModularModal = props => {
         <>
         
         <div style={modalStyle} className={classes.paper}>
-                <IconButton className={classes.customizedButton} onClick={handleClose}>
-                    <Close />
-                </IconButton>
-            <h2 id="simple-modal-title">Join Our Waitlist</h2>
-            <p id="simple-modal-description">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.
-          </p>
-          
-            <form onSubmit={handleSubmit}>
-                <TextField
-                    className={classes.emailField}
-                    placeholder="Enter Email Address"
-                    variant="outlined"
-                    size="small"
-                    name="email"
-                    fullWidth
-                    type="email"
-                    value={email}
-                    onChange={handleEmailValidation}
-                />
-                <Typography variant='caption' >
-                    By clicking “Submit Now” you agree to the ExpandFi Terms of Service and Privacy Policy.
+                <Grid container direction="column" alignContent="flex-end" >
+                    <IconButton className={classes.customizedButton} onClick={handleClose} >
+                        <Close />
+                    </IconButton>
+                </Grid>
+               
+                <Grid container direction="column" alignItems="center" className={classes.modalBody}>
+                    <h2 className={classes.modalTitle} id="simple-modal-title">Join our waitlist</h2>
+                    <p id="simple-modal-description">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.
+                    </p>
+
+                    <form onSubmit={handleSubmit} name="submit-to-google-sheet">
+                        <TextField
+                            className={classes.emailField}
+                            placeholder="Enter Email Address"
+                            variant="outlined"
+                            size="small"
+                            name="email"
+                            fullWidth
+                            type="email"
+                            value={email}
+                            onChange={handleEmailValidation}
+                        />
+                        <Typography variant='caption' >
+                            By clicking “Submit Now” you agree to the ExpandFi Terms of Service and Privacy Policy.
                 </Typography>
-                <Button
-                    fullWidth
-                    className={classes.btn}
-                    size="small"
-                    disabled={disable}
-                    onClick={handleSubmit}
-                    type="submit"
-                >
-                    JOIN OUR WAITLIST
+                        <Button
+                            fullWidth
+                            className={classes.btn}
+                            size="small"
+                            disabled={disable}
+                            onClick={handleSubmit}
+                            type="submit"
+                        >
+                            JOIN OUR WAITLIST
             </Button>
-            </form>
-            {error}
+                    </form>
+                    {error}
+                </Grid>
+
         </div>
         </>
     );
