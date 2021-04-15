@@ -61,13 +61,13 @@ const useStyles = makeStyles(theme => ({
   text2: {
     color: 'white',
     fontWeight: 900,
-    fontSize: '3rem'
-
+    fontSize: '2.8rem'
   },
   text25: {
     color: '#2BFFD8',
     fontWeight: 900,
-    fontSize: '3rem',
+    fontSize: '2.8rem',
+    marginLeft: "14px"
   },
   text3: {
     fontSize: '1.3rem',
@@ -188,13 +188,13 @@ const Hero = props => {
         className={classes.text25}
         typedProps={{
           strings: [
-            ' reach',
-            ' channels',
-            ' relevance',
-            ' data',
-            ' sales',
-            ' profits',
-            ' value',
+            'reach',
+            'channels',
+            'relevance',
+            'data',
+            'sales',
+            'profits',
+            'value',
           ],
           typeSpeed: 50,
           loop: true,

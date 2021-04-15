@@ -10,9 +10,9 @@ import { Main as MainLayout, Minimal as MinimalLayout, DocsLayout, ExpandfiNav }
 
 import {
   ExpandfiHome as Expandfi,
-  Home as HomeView,
-  IndexView,
-  FaqPage as FaqPage
+  FaqPage as FaqPage,
+  NotFound as NotFoundView,
+  NotFoundCover as NotFoundCoverView,
 } from './views';
 import ModularModal from './views/ExpandfiHome/components/ModularModal';
 
@@ -24,7 +24,7 @@ const Routes = () => {
     <Switch>
       <Route
         exact 
-        path="/expandfi"
+        path="/"
         render={matchprops => (
           <WithLayout
           {...matchprops}
@@ -46,15 +46,27 @@ const Routes = () => {
       />
       <Route
         exact
-        path="/"
+        path="/not-found"
         render={matchProps => (
           <WithLayout
             {...matchProps}
-            component={IndexView}
-            layout={MainLayout}
+            component={NotFoundView}
+            layout={ExpandfiNav}
           />
         )}
       />
+      <Route
+        exact
+        path="/not-found-cover"
+        render={matchProps => (
+          <WithLayout
+            {...matchProps}
+            component={NotFoundCoverView}
+            layout={ExpandfiNav}
+          />
+        )}
+      />
+      <Redirect to="/not-found-cover" />
       
     </Switch>
     <ModularModal open={open} setOpen={setOpen}/>

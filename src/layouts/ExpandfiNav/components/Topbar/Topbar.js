@@ -65,19 +65,19 @@ const useStyles = makeStyles(theme => ({
 const nav = [
   {
     title:'Features',
-    anchor:'/expandfi#features'
+    anchor:'/#features'
   },
   {
     title:'How It Works',
-    anchor:'/expandfi#howItWorks'
+    anchor:'/#howItWorks'
   },
   {
     title:'Testimonials',
-    anchor:'/expandfi#testimonials'
+    anchor:'/#testimonials'
   },
   {
     title:'Pricing',
-    anchor:'/expandfi#pricing'
+    anchor:'/#pricing'
   },
   {
     title:'FAQ',
@@ -94,7 +94,7 @@ const Topbar = ({ openModal, themeMode, className, ...rest }) => {
     <>
     <Toolbar className={clsx(classes.toolbar, className)} {...rest}>
       <div>
-        <a href="/expandfi" title="ExpandFi">
+        <a href="/" title="ExpandFi">
           <Image
             className={classes.logoImage}
             src='./assets/logo.png'
