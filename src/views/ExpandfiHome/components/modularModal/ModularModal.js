@@ -21,7 +21,7 @@ function getModalStyle() {
 const useStyles = makeStyles((theme) => ({
     paper: {
         position: 'absolute',
-        width: 600,
+        width: 472,
         backgroundColor: theme.palette.background.paper,
         borderRadius: '10px',
         boxShadow: theme.shadows[5],
@@ -34,6 +34,7 @@ const useStyles = makeStyles((theme) => ({
         fontSize: '1rem',
         fontWeight: '600',
         padding: '10px',
+        marginTop: '15px',
         '&:disabled': {
           background: '#AA2CFF',
           color: 'white',
@@ -51,11 +52,20 @@ const useStyles = makeStyles((theme) => ({
         color: 'gray',
       },
     modalBody: {
-        textAlign: 'center'
+        textAlign: 'center',
     },
     modalTitle: {
-        fontSize: '32px'
+        fontSize: '32px',
+        marginBottom: '10px',
     },
+    modalSubtitle: {
+        fontSize: '16px',
+        marginBottom: '15px',
+    },
+    emailField: {
+        marginBottom: '15px'
+    },
+
 }));
 
 
@@ -147,8 +157,8 @@ const ModularModal = props => {
                
                 <Grid container direction="column" alignItems="center" className={classes.modalBody}>
                     <h2 className={classes.modalTitle} id="simple-modal-title">Join our waitlist</h2>
-                    <p id="simple-modal-description">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.
+                    <p id="simple-modal-description" className={classes.modalSubtitle} >
+                        Grow your business with ExpandFi
                     </p>
 
                     <form onSubmit={handleSubmit} name="submit-to-google-sheet">
@@ -164,8 +174,8 @@ const ModularModal = props => {
                             onChange={handleEmailValidation}
                         />
                         <Typography variant='caption' >
-                            By clicking “Submit Now” you agree to the ExpandFi Terms of Service and Privacy Policy.
-                </Typography>
+                            By clicking “Join our waitlist” you agree to the ExpandFi Terms of Service and Privacy Policy.
+                        </Typography>
                         <Button
                             fullWidth
                             className={classes.btn}
@@ -198,6 +208,7 @@ const ModularModal = props => {
                 show={show}
                 type="success"
                 title="You're on the list!"
+                text="Thank you for signing up"
                 onConfirm={() => setShow(false)}
             />
         </>
