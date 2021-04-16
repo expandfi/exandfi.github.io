@@ -56,6 +56,7 @@ const Routes = () => {
         )}
       />
       <Redirect to="/not-found" />
+
       
     </Switch>
     <ModularModal open={open} setOpen={setOpen}/>
