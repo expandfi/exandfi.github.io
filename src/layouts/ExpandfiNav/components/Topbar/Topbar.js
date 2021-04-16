@@ -105,8 +105,8 @@ const Topbar = ({ openModal, themeMode, className, ...rest }) => {
       </div>
 
       <List className={classes.navigationContainer}>
-      {nav.map((link)=> (
-        <ListItem className={classes.listItem}>
+      {nav.map((link, index) => (
+        <ListItem className={classes.listItem} key={index}>
         <a href={link.anchor}>
           <Typography noWrap>
             {link.title}
