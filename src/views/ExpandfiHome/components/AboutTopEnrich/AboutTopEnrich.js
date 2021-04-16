@@ -77,7 +77,7 @@ const AboutTopEnrich = props => {
             <Typography className={classes.aboutTitle} title={props.title} align="left">
               {props.title}
             </Typography>
-            <Typography className={classes.aboutBody}align="left">
+            <Typography className={classes.aboutBody} align="left">
               {props.body}
             </Typography>
             <Button className={classes.btn} onClick={() => props.setOpen(true)}>SIGN UP FOR EXPANDFI</Button>

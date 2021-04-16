@@ -10,8 +10,9 @@ import { Main as MainLayout, Minimal as MinimalLayout, DocsLayout, ExpandfiNav }
 
 import {
   ExpandfiHome as Expandfi,
-  Home as HomeView,
-  FaqPage as FaqPage
+  FaqPage as FaqPage,
+  NotFound as NotFoundView,
+  NotFoundCover as NotFoundCoverView,
 } from './views';
 import ModularModal from './views/ExpandfiHome/components/ModularModal';
 
@@ -43,6 +44,19 @@ const Routes = () => {
           />
         )}
       />
+      <Route
+        exact
+        path="/not-found"
+        render={matchProps => (
+          <WithLayout
+            {...matchProps}
+            component={NotFoundView}
+            layout={ExpandfiNav}
+          />
+        )}
+      />
+      <Redirect to="/not-found" />
+
       
     </Switch>
     <ModularModal open={open} setOpen={setOpen}/>

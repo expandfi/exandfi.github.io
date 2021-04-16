@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Button } from '@material-ui/core';
+import { Typography } from '@material-ui/core';
 import { LearnMoreLink } from 'components/atoms';
 import { SectionHeader } from 'components/molecules';
 import { Section } from 'components/organisms';
@@ -13,16 +13,31 @@ const useStyles = makeStyles(theme => ({
     alignItems: 'center',
     justifyContent: 'center',
     minHeight: `calc(100vh - ${theme.mixins.toolbar['@media (min-width:600px)'].minHeight}px)`,
-    maxWidth: 500,
+    maxWidth: 800,
     margin: `0 auto`,
   },
-  section: {
-    paddingTop: 0,
-    paddingBottom: 0,
+  notFoundCaption: {
+    fontFamily: 'Lato',
+    fontWeight: '900',
+    fontSize: '44px',
+    lineHeight: '50px',
+    color: '#f9b800',
+    marginBottom: '1rem',
   },
-  label: {
-    fontWeight: 'bold',
-    textTransform: 'uppercase',
+  notFoundTitle: {
+    fontFamily: 'Lato',
+    fontWeight: '900',
+    fontSize: '44px',
+    lineHeight: '50px',
+    color: '#121037',
+    marginBottom: '2rem',
+  },
+  notFoundText: {
+    fontFamily: 'Open Sans',
+    fontWeight: '600',
+    color: '#121037',
+    lineHeight: '28px',
+    fontSize:'20px'
   },
 }));
 
@@ -35,42 +50,20 @@ const NotFound = () => {
 
   return (
     <div>
-      <Section className={classes.section}>
-        <div className={classes.formContainer}>
-          <SectionHeader
-            label="404"
-            title="Uh oh."
-            subtitle={
-              <span>
-                There’s nothing here, but if you feel this is an error please{' '}
-                <LearnMoreLink
-                  title="let us know"
-                  href="#"
-                  typographyProps={{ variant: 'h6' }}
-                />
-              </span>
-            }
-            titleProps={{
-              variant: 'h3',
-            }}
-            labelProps={{
-              color: 'secondary',
-              className: classes.label,
-              variant: 'h5',
-            }}
-            ctaGroup={[
-              <Button
-                size="large"
-                variant="contained"
-                color="primary"
-                onClick={handleClick}
-              >
-                Go Back
-              </Button>,
-            ]}
-            disableGutter
-          />
-        </div>
+      <Section className={classes.formContainer}>
+
+        <Typography className={classes.notFoundCaption} >
+          404
+        </Typography>
+
+        <Typography className={classes.notFoundTitle} >
+          Oops
+        </Typography>
+
+        <Typography className={classes.notFoundText}>
+          The page you are looking for does not exist.
+        </Typography>
+
       </Section>
     </div>
   );

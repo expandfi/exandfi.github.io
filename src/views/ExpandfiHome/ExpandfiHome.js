@@ -80,9 +80,11 @@ const ExpandfiHome = ({ open, setOpen, themeMode }) => {
            <BottomCTA setOpen={setOpen}/>
         </SectionAlternate>
         <div className={classes.toTopDiv} >
-          <Button className={classes.toTop}>
-            Back to the top ⬆
-        </Button>
+          <a href="/#top" >
+            <Button className={classes.toTop}>
+              Back to the top ⬆
+            </Button>
+          </a>
         </div>
 
 
