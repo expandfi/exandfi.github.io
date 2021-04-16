@@ -35,7 +35,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const BottomCTA = props => {
-  const { data, className, ...rest } = props;
+  const { className, ...rest } = props;
   const classes = useStyles();
 
   const theme = useTheme();

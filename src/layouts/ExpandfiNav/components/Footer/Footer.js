@@ -95,7 +95,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const Footer = props => {
-  const { pages, className, ...rest } = props;
+  const { className, ...rest } = props;
 
   const classes = useStyles();
 
