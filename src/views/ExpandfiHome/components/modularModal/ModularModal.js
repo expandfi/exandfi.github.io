@@ -114,7 +114,7 @@ const ModularModal = props => {
 
     
 
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbyBimTtxeLuTI8DOKTcYlTrIwrhQmLNe3_7AvvZy147EAbfXF75j0-1laaN5GcLnGJJ/exec'
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwU7nkBhW8xfiT86PzF7i_lDdG0_fBHiV5M6UVsHmaJTl7nX_jsORuWXPBvm0EpmT8Q/exec'
     const form = document.forms['submit-to-google-sheet']
 
     function handleSubmit(event) {
