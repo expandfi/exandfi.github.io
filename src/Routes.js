@@ -55,18 +55,7 @@ const Routes = () => {
           />
         )}
       />
-      <Route
-        exact
-        path="/not-found-cover"
-        render={matchProps => (
-          <WithLayout
-            {...matchProps}
-            component={NotFoundCoverView}
-            layout={ExpandfiNav}
-          />
-        )}
-      />
-      <Redirect to="/not-found-cover" />
+      <Redirect to="/not-found" />
       
     </Switch>
     <ModularModal open={open} setOpen={setOpen}/>
