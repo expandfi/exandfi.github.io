@@ -11,7 +11,6 @@ import { Main as MainLayout, Minimal as MinimalLayout, DocsLayout, ExpandfiNav }
 import {
   ExpandfiHome as Expandfi,
   Home as HomeView,
-  IndexView,
   FaqPage as FaqPage
 } from './views';
 import ModularModal from './views/ExpandfiHome/components/ModularModal';
@@ -24,7 +23,7 @@ const Routes = () => {
     <Switch>
       <Route
         exact 
-        path="/expandfi"
+        path="/"
         render={matchprops => (
           <WithLayout
           {...matchprops}
@@ -41,17 +40,6 @@ const Routes = () => {
           {...matchprops}
           component={FaqPage}
           layout={ExpandfiNav}
-          />
-        )}
-      />
-      <Route
-        exact
-        path="/"
-        render={matchProps => (
-          <WithLayout
-            {...matchProps}
-            component={IndexView}
-            layout={MainLayout}
           />
         )}
       />
