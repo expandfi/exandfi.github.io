@@ -235,6 +235,7 @@ const Hero = props => {
                             type="email"
                             value={email}
                             onChange={handleEmailValidation}
+                            onMouseLeave={handleEmailValidation}
                   />
                   </form>
                 </Grid>
