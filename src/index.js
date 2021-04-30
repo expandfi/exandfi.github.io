@@ -9,6 +9,26 @@ import ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
 import App from './App';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+
+console.log("index.js code");
+
+
+const checkElement = async selector => {
+    while ( document.querySelector(selector) === null) {
+      await new Promise( resolve =>  requestAnimationFrame(resolve) )
+    }
+    return document.querySelector(selector); 
+};
+
+checkElement('#root').then((selector) => {
+    console.log(selector);
+    ReactDOM.render(<App />, document.getElementById('root'));
+});
+
+
+
+
+
+
 
 serviceWorker.unregister();
