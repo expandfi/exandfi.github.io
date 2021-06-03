@@ -37,10 +37,10 @@
   Any questions? Reach out to me:
 
   ## Github
-  https://github.com/joe-zu
-  https://github.com/ryryp97
-  https://github.com/alxndrnevermando
+  https://github.com/joe-zu <br>
+  https://github.com/ryryp97 <br>
+  https://github.com/alxndrnevermando <br>
   ## Email
-  giampaoli.joe@gmail.com
-  ryanpetrecca@gmail.com
-  armandocontreras62596@gmail.com
+  giampaoli.joe@gmail.com <br>
+  ryanpetrecca@gmail.com <br>
+  armandocontreras62596@gmail.com <br>
