@@ -26,9 +26,9 @@
   ## Contributions
   Thank you to the following contributors for their work on this repository
 
-  *[Joe Giampaoli] (https://github.com/joe-zu)
-  *[Ryan Petrecca] (https://github.com/ryryp97)
-  *[Armando Contreras] (https://github.com/alxndrnevermando)
+  * [Joe Giampaoli] (https://github.com/joe-zu)
+  * [Ryan Petrecca] (https://github.com/ryryp97)
+  * [Armando Contreras] (https://github.com/alxndrnevermando)
 
   ## Test
   No testing available at the moment.
