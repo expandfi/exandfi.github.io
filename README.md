@@ -3,7 +3,6 @@
   ##### Table of Contents  
   * [Description](#description)
   * [Demo](#demo)
-  * [Installation](#installation)
   * [Usage](#usage)  
   * [License](#license)  
   * [Contributions](#contributor)  
@@ -18,24 +17,30 @@
  
  <img width="1732" alt="Screen Shot 2021-04-02 at 7 52 37 PM" src="https://user-images.githubusercontent.com/71421032/113465984-fbbd8a80-93ec-11eb-9243-0b7ea8e22ea9.png">
 
-  ## Installation
-  You will need to install the following repository in order to use: https://github.com/alxndrnevermando/workout-tracker.git
-
   ## Usage
-  First type npm install  into your terminal. Then run npm start to begin the application.
+  First type npm install into your terminal. Then run npm start to begin the application.
 
   ## License
   MIT
 
   ## Contributions
-  None.
+  Thank you to the following contributors for their work on this repository
+
+    -[Joe Giampaoli] (https://github.com/joe-zu)
+    -[Ryan Petrecca] (https://github.com/ryryp97)
+    -[Armando Contreras] (https://github.com/alxndrnevermando)
 
   ## Test
   No testing available at the moment.
 
   ## Questions
   Any questions? Reach out to me:
+  
   ## Github
+  https://github.com/joe-zu
+  https://github.com/ryryp97
   https://github.com/alxndrnevermando
   ## Email
+  giampaoli.joe@gmail.com
+  ryanpetrecca@gmail.com
   armandocontreras62596@gmail.com
